@@ -1,3 +1,4 @@
+import numpy as np
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
@@ -17,7 +18,7 @@ class ImageDepthSubscriber(Node):
         self.cv_bridge = CvBridge()
         self.depth_image = None
 
-        self.model = YOLO('/home/mscrobotics2425laptop21/Team2_Workspace/src/Object_Detection/Object_Detection/Detection/weights/best.pt')
+        self.model = YOLO('/home/mscrobotics2425laptop21/Team2_Workspace/src/Object_Detection/Object_Detection/Detection/weights/yolo11m.pt')
 
     def listener_callback_color(self, data):
         # self.get_logger().info('Receiving color video frame')
@@ -33,7 +34,7 @@ class ImageDepthSubscriber(Node):
             return
 
         # Perform object detection
-        results = self.model.predict(source=color_image, save=False, save_txt=False, conf=0.5)
+        results = self.model.predict(source=color_image, save=False, save_txt=False, conf=0.2)
 
         # Loop through each result and draw bounding boxes
         for result in results:
@@ -55,9 +56,17 @@ class ImageDepthSubscriber(Node):
                     # Calculate position for the label
                     label_position = (int(x1), int(y1) - 10)  # Slightly above the box
 
+                    center_x = int((x1 + x2) / 2)
+                    center_y = int((y1 + y2) / 2)
+                    if 0 <= center_x < self.depth_image.shape[1] and 0 <= center_y < self.depth_image.shape[0]:
+                        distance = self.depth_image[center_y][center_x].astype(float)/100
+                    else:
+                        distance = 0.0
+
                     # Put the label and confidence on the image
-                    cv2.putText(color_image, f'{label} {conf:.2f}', label_position, cv2.FONT_HERSHEY_SIMPLEX, 0.5,
+                    cv2.putText(color_image, f'{label} {conf:.2f} Dis: {distance:.2f} cm', label_position, cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                                 (0, 255, 0), 2)
+                    cv2.circle(color_image, (center_x, center_y), 5, (0, 0, 255), -1)
 
         # Display the image
         cv2.imshow("object", color_image)
