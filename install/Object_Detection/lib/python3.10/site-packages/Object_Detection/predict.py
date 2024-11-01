@@ -86,3 +86,6 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
+# launch camera command:
+# ros2 launch realsense2_camera rs_launch.py depth_module.depth_profile:=848x480x30 rgb_camera.color_profile:=848x480x30 align_depth.enable:=true pointcloud.enable:=true

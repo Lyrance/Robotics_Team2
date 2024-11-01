@@ -1,6 +1,0 @@
-train: D:/Personal documents/Study/University/Msc/Robotic_System_Design/Detection/yolov8/dataSet/images/train
-val: D:/Personal documents/Study/University/Msc/Robotic_System_Design/Detection/yolov8/dataSet/images/val
-test: D:/Personal documents/Study/University/Msc/Robotic_System_Design/Detection/yolov8/dataSet/images/test
-
-nc: 1  # number of classes (根据你的项目更改)
-names: ['block']  # 类别名称列表，改为你实际的类别名称
