@@ -1,10 +1,12 @@
 import numpy as np
 import rclpy
+from imgviz.external.transformations import rotation_matrix
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
 from ultralytics import YOLO
+
 
 class ImageDepthSubscriber(Node):
     def __init__(self, name):
@@ -13,12 +15,13 @@ class ImageDepthSubscriber(Node):
             Image, '/camera/camera/color/image_raw', self.listener_callback_color, 10
         )
         self.sub_depth = self.create_subscription(
-            Image, '/camera/camera/depth/image_rect_raw', self.listener_callback_depth, 10
+            Image, '/camera/camera/aligned_depth_to_color/image_raw', self.listener_callback_depth, 10
         )
+
         self.cv_bridge = CvBridge()
         self.depth_image = None
 
-        self.model = YOLO('/home/mscrobotics2425laptop21/Team2_Workspace/src/Object_Detection/Object_Detection/Detection/weights/yolo11m.pt')
+        self.model = YOLO('/home/mscrobotics2425laptop21/Team2_Workspace/src/Object_Detection/Object_Detection/Detection/weights/best.pt')
 
     def listener_callback_color(self, data):
         # self.get_logger().info('Receiving color video frame')
@@ -34,7 +37,7 @@ class ImageDepthSubscriber(Node):
             return
 
         # Perform object detection
-        results = self.model.predict(source=color_image, save=False, save_txt=False, conf=0.2)
+        results = self.model.predict(source=color_image, save=False, save_txt=False, conf=0.6)
 
         # Loop through each result and draw bounding boxes
         for result in results:
@@ -58,10 +61,10 @@ class ImageDepthSubscriber(Node):
 
                     center_x = int((x1 + x2) / 2)
                     center_y = int((y1 + y2) / 2)
-                    if 0 <= center_x < self.depth_image.shape[1] and 0 <= center_y < self.depth_image.shape[0]:
-                        distance = self.depth_image[center_y][center_x].astype(float)/100
-                    else:
-                        distance = 0.0
+                    # if 0 <= center_x < self.depth_image.shape[1] and 0 <= center_y < self.depth_image.shape[0]:
+                    distance = self.depth_image[center_y][center_x].astype(float)/10
+                    # else:
+                    #     distance = 0.0
 
                     # Put the label and confidence on the image
                     cv2.putText(color_image, f'{label} {conf:.2f} Dis: {distance:.2f} cm', label_position, cv2.FONT_HERSHEY_SIMPLEX, 0.5,

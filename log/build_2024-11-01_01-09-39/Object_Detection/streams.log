@@ -1,0 +1,26 @@
+[0.408s] Invoking command in '/home/mscrobotics2425laptop21/Team2_Workspace/src/Object_Detection': PYTHONPATH=/home/mscrobotics2425laptop21/Team2_Workspace/build/Object_Detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop21/Team2_Workspace/install/Object_Detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/Object_Detection build --build-base /home/mscrobotics2425laptop21/Team2_Workspace/build/Object_Detection/build install --record /home/mscrobotics2425laptop21/Team2_Workspace/build/Object_Detection/install.log --single-version-externally-managed install_data
+[0.546s] running egg_info
+[0.546s] writing ../../build/Object_Detection/Object_Detection.egg-info/PKG-INFO
+[0.546s] writing dependency_links to ../../build/Object_Detection/Object_Detection.egg-info/dependency_links.txt
+[0.546s] writing entry points to ../../build/Object_Detection/Object_Detection.egg-info/entry_points.txt
+[0.546s] writing requirements to ../../build/Object_Detection/Object_Detection.egg-info/requires.txt
+[0.546s] writing top-level names to ../../build/Object_Detection/Object_Detection.egg-info/top_level.txt
+[0.548s] reading manifest file '../../build/Object_Detection/Object_Detection.egg-info/SOURCES.txt'
+[0.550s] writing manifest file '../../build/Object_Detection/Object_Detection.egg-info/SOURCES.txt'
+[0.550s] running build
+[0.550s] running build_py
+[0.550s] copying Object_Detection/predict.py -> /home/mscrobotics2425laptop21/Team2_Workspace/build/Object_Detection/build/lib/Object_Detection
+[0.550s] running install
+[0.551s] running install_lib
+[0.551s] copying /home/mscrobotics2425laptop21/Team2_Workspace/build/Object_Detection/build/lib/Object_Detection/predict.py -> /home/mscrobotics2425laptop21/Team2_Workspace/install/Object_Detection/lib/python3.10/site-packages/Object_Detection
+[0.552s] byte-compiling /home/mscrobotics2425laptop21/Team2_Workspace/install/Object_Detection/lib/python3.10/site-packages/Object_Detection/predict.py to predict.cpython-310.pyc
+[0.552s] running install_data
+[0.552s] running install_egg_info
+[0.554s] removing '/home/mscrobotics2425laptop21/Team2_Workspace/install/Object_Detection/lib/python3.10/site-packages/Object_Detection-0.0.0-py3.10.egg-info' (and everything under it)
+[0.554s] Copying ../../build/Object_Detection/Object_Detection.egg-info to /home/mscrobotics2425laptop21/Team2_Workspace/install/Object_Detection/lib/python3.10/site-packages/Object_Detection-0.0.0-py3.10.egg-info
+[0.554s] running install_scripts
+[0.570s] Installing collect_data script to /home/mscrobotics2425laptop21/Team2_Workspace/install/Object_Detection/lib/Object_Detection
+[0.570s] Installing predict script to /home/mscrobotics2425laptop21/Team2_Workspace/install/Object_Detection/lib/Object_Detection
+[0.570s] Installing test script to /home/mscrobotics2425laptop21/Team2_Workspace/install/Object_Detection/lib/Object_Detection
+[0.570s] writing list of installed files to '/home/mscrobotics2425laptop21/Team2_Workspace/build/Object_Detection/install.log'
+[0.591s] Invoked command in '/home/mscrobotics2425laptop21/Team2_Workspace/src/Object_Detection' returned '0': PYTHONPATH=/home/mscrobotics2425laptop21/Team2_Workspace/build/Object_Detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop21/Team2_Workspace/install/Object_Detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/Object_Detection build --build-base /home/mscrobotics2425laptop21/Team2_Workspace/build/Object_Detection/build install --record /home/mscrobotics2425laptop21/Team2_Workspace/build/Object_Detection/install.log --single-version-externally-managed install_data
