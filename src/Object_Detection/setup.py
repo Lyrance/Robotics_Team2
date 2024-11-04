@@ -21,6 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'collect_data =''Object_Detection.collect_data:main',
+            'predict =''Object_Detection.predict :main',
+            'test =''Object_Detection.test:main',
         ],
     },
 )

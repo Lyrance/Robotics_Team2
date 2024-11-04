@@ -16,27 +16,25 @@ class ImageDepthSubscriber(Node):
         self.cv_bridge = CvBridge()
         self.depth_image = None
 
-        self.color_count = 0
-        self.depth_count = 0
+        self.color_count = 1701
+        self.depth_count = 1701
 
     def listener_callback_color(self, data):
         # self.get_logger().info('Receiving color video frame')
         color_image = self.cv_bridge.imgmsg_to_cv2(data, 'bgr8')
 
-        file_name = f"/home/mscrobotics2425laptop21/ros2_test/saved_image/bridge_yellow_color_{self.color_count/10}.jpg"
-        if self.color_count%10 == 0:
-            cv2.imwrite(file_name, color_image)
-            self.get_logger().info('Saved color image as {}'.format(file_name))
+        file_name = f"/home/mscrobotics2425laptop21/ros2_test/saved_image_1/far_color_{self.color_count}.jpg"
+        cv2.imwrite(file_name, color_image)
+        self.get_logger().info('Saved color image as {}'.format(file_name))
         self.color_count += 1
 
     def listener_callback_depth(self, data):
         # self.get_logger().info('Receiving depth video frame')
         depth_image = self.cv_bridge.imgmsg_to_cv2(data, '16UC1')
 
-        file_name = f"/home/mscrobotics2425laptop21/ros2_test/saved_image/bridge_yellow_depth_{self.depth_count/10}.png"
-        if self.depth_count%10 == 0:
-            cv2.imwrite(file_name, depth_image)
-            self.get_logger().info('Saved depth image as {}'.format(file_name))
+        file_name = f"/home/mscrobotics2425laptop21/ros2_test/saved_image_1/far_depth_{self.depth_count}.png"
+        cv2.imwrite(file_name, depth_image)
+        self.get_logger().info('Saved depth image as {}'.format(file_name))
         self.depth_count += 1
 
 
