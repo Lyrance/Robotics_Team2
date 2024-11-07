@@ -38,7 +38,7 @@ class LidarDataCollector(Node):
             rclpy.shutdown()
 
     def save_data(self):
-        filename = os.path.join(self.data_directory, f'{self.experiment_name}.csv')
+        filename = os.path.join(self.data_directory, f'angle_1m_1.2cm_{self.experiment_name}.csv')
         with open(filename, 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
             header = ['frame', 'angle_min', 'angle_max', 'angle_increment', 'ranges']
