@@ -1,0 +1,21 @@
+[0.499s] Invoking command in '/home/mscrobotics2425laptop21/nav/team2_nav': PYTHONPATH=/home/mscrobotics2425laptop21/nav/build/team2_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop21/nav/install/team2_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/team2_nav build --build-base /home/mscrobotics2425laptop21/nav/build/team2_nav/build install --record /home/mscrobotics2425laptop21/nav/build/team2_nav/install.log --single-version-externally-managed install_data
+[0.656s] running egg_info
+[0.657s] writing ../build/team2_nav/team2_nav.egg-info/PKG-INFO
+[0.657s] writing dependency_links to ../build/team2_nav/team2_nav.egg-info/dependency_links.txt
+[0.657s] writing entry points to ../build/team2_nav/team2_nav.egg-info/entry_points.txt
+[0.657s] writing requirements to ../build/team2_nav/team2_nav.egg-info/requires.txt
+[0.657s] writing top-level names to ../build/team2_nav/team2_nav.egg-info/top_level.txt
+[0.660s] reading manifest file '../build/team2_nav/team2_nav.egg-info/SOURCES.txt'
+[0.661s] writing manifest file '../build/team2_nav/team2_nav.egg-info/SOURCES.txt'
+[0.661s] running build
+[0.661s] running build_py
+[0.661s] running install
+[0.661s] running install_lib
+[0.662s] running install_data
+[0.663s] copying urdf/leo.urdf -> /home/mscrobotics2425laptop21/nav/install/team2_nav/share/team2_nav/urdf
+[0.663s] running install_egg_info
+[0.666s] removing '/home/mscrobotics2425laptop21/nav/install/team2_nav/lib/python3.10/site-packages/team2_nav-0.0.0-py3.10.egg-info' (and everything under it)
+[0.666s] Copying ../build/team2_nav/team2_nav.egg-info to /home/mscrobotics2425laptop21/nav/install/team2_nav/lib/python3.10/site-packages/team2_nav-0.0.0-py3.10.egg-info
+[0.667s] running install_scripts
+[0.683s] writing list of installed files to '/home/mscrobotics2425laptop21/nav/build/team2_nav/install.log'
+[0.700s] Invoked command in '/home/mscrobotics2425laptop21/nav/team2_nav' returned '0': PYTHONPATH=/home/mscrobotics2425laptop21/nav/build/team2_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop21/nav/install/team2_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/team2_nav build --build-base /home/mscrobotics2425laptop21/nav/build/team2_nav/build install --record /home/mscrobotics2425laptop21/nav/build/team2_nav/install.log --single-version-externally-managed install_data

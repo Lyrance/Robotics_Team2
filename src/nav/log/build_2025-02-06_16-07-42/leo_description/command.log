@@ -1,0 +1,2 @@
+Invoking command in '/home/mscrobotics2425laptop21/nav/build/leo_description': /usr/bin/cmake /home/mscrobotics2425laptop21/nav/leo_common/leo_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/mscrobotics2425laptop21/nav/install/leo_description
+Invoked command in '/home/mscrobotics2425laptop21/nav/build/leo_description' returned '1': /usr/bin/cmake /home/mscrobotics2425laptop21/nav/leo_common/leo_description -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/mscrobotics2425laptop21/nav/install/leo_description
