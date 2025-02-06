@@ -21,7 +21,7 @@ class ImageDepthSubscriber(Node):
         self.cv_bridge = CvBridge()
         self.depth_image = None
 
-        self.model = YOLO('/home/mscrobotics2425laptop21/Team2_Workspace/src/object_detection/object_detection/weights/train2/best.pt')
+        self.model = YOLO('/home/mscrobotics2425laptop21/Team2_Workspace/src/object_detection/object_detection/weights/train3/best.pt')
 
     def listener_callback_color(self, data):
         # self.get_logger().info('Receiving color video frame')
