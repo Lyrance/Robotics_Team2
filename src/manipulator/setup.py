@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'ServerOfPerceptionAndGrasp = manpulator.server_of_perception_for_grasp:main',
         ],
     },
 )
