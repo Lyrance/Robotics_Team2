@@ -1,0 +1,16 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from interfaces/srv/ObjectGrab.srv
+// generated code does not contain a copyright notice
+
+#include "interfaces/msg/ObjectInformation.idl"
+
+module interfaces {
+  module srv {
+    struct ObjectGrab_Request {
+      interfaces::msg::ObjectInformation object;
+    };
+    struct ObjectGrab_Response {
+      boolean success;
+    };
+  };
+};

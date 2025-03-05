@@ -1,0 +1,3 @@
+[console_scripts]
+ServerOfPerceptionAndGrasp = manpulator.server_of_perception_for_grasp:main
+

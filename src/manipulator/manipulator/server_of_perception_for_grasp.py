@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 
 # TODO: 根据实际情况导入正确的 GoalPosition 服务消息类型
-from your_service_pkg.srv import GoalPosition
+from package_interfaces.srv import ObjectGrab
 
 from interbotix_common_modules.common_robot.robot import (
     create_interbotix_global_node,
@@ -16,7 +16,7 @@ from interbotix_xs_modules.xs_robot.arm import InterbotixManipulatorXS
 class ServerOfPerceptionAndGrasp(Node):
     def __init__(self,name):
         super().__init__(name)
-        self.srv = self.create_service(GoalPosition,'move_to_goal_position',self.callback) #TODO message type needed to be confirmed
+        self.srv = self.create_service(ObjectGrab, 'object_grab_service', self.callback) #TODO message type needed to be confirmed
 
         # Arm Parameters
         self.ROBOT_MODEL = 'px150'
@@ -72,34 +72,66 @@ class ServerOfPerceptionAndGrasp(Node):
         #     reverse=True
         
 
-        clusters = request.clusters
-        success = request.success
+        # clusters = request.clusters
+        # success = request.success
 
-        response = success
-        if success:
-            self.perception_and_grasp(clusters)
-            self.get_logger().info('Get cluster positions sucessfully!')
-            return response
+        # response = success
+        # if success:
+        #     self.perception_and_grasp(clusters)
+        #     self.get_logger().info('Get cluster positions sucessfully!')
+        #     return response
+        # else:
+        #     return response
+
+        x = request.object.x
+        y = request.object.y
+        z = request.object.z
+        detected = request.object.detected
+
+        if detected:
+            self.perception_and_grasp(x, y, z)
+            response.success = True
         else:
-            return response
+            response.success = False
         
-    def perception_and_grasp(self,clusters):
+    def perception_and_grasp(self,x, y, z):
         """
         TODO:
         The parameters of positions needed to be repalced by measuring in real world
         """
-        for cluster in clusters:
-            x, y, z = cluster['position']
-            print(x, y, z)
-            self.bot.arm.set_ee_pose_components(x=x, y=y, z=z+0.05, pitch=0.5)
+        # for cluster in clusters:
+        #     x, y, z = cluster['position']
+        try:
+            
+            self.bot.arm.set_ee_pose_components(x=x, y=y, z=z + 0.05, pitch=0.5)
             self.bot.arm.set_ee_pose_components(x=x, y=y, z=z, pitch=0.5)
             self.bot.gripper.grasp()
-            self.bot.arm.set_ee_pose_components(x=x, y=y, z=z+0.05, pitch=0.5)
+
+            
+            self.bot.arm.set_ee_pose_components(x=x, y=y, z=z + 0.05, pitch=0.5)
             self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
             self.bot.gripper.release()
 
-        self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
-        self.bot.arm.go_to_sleep_pose()
+            
+            self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
+            self.bot.arm.go_to_sleep_pose()
+
+            self.get_logger().info("grab success")
+            return True
+
+        except Exception as e:
+            self.get_logger().error(f"grab fail: {str(e)}")
+            return False
+        #     print(x, y, z)
+        #     self.bot.arm.set_ee_pose_components(x=x, y=y, z=z+0.05, pitch=0.5)
+        #     self.bot.arm.set_ee_pose_components(x=x, y=y, z=z, pitch=0.5)
+        #     self.bot.gripper.grasp()
+        #     self.bot.arm.set_ee_pose_components(x=x, y=y, z=z+0.05, pitch=0.5)
+        #     self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
+        #     self.bot.gripper.release()
+
+        # self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
+        # self.bot.arm.go_to_sleep_pose()
 
 def main(args = None):
     rclpy.init(args=args)

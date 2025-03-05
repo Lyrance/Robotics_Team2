@@ -1,0 +1,388 @@
+[0.062s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.062s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x78f974188310>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78f97415bdc0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78f97415bdc0>>, mixin_verb=('build',))
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.156s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/mscrobotics2425laptop3/Robotics_Team2'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extensions ['ignore', 'ignore_ament_install']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extension 'ignore'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extension 'ignore_ament_install'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extensions ['colcon_pkg']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extension 'colcon_pkg'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extensions ['colcon_meta']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extension 'colcon_meta'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extensions ['ros']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extension 'ros'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extensions ['cmake', 'python']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extension 'cmake'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extension 'python'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extensions ['python_setup_py']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(image) by extension 'python_setup_py'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.163s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'ignore'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'ignore_ament_install'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extensions ['colcon_pkg']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'colcon_pkg'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extensions ['colcon_meta']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'colcon_meta'
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extensions ['ros']
+[0.164s] Level 1:colcon.colcon_core.package_identification:_identify(src/interfaces) by extension 'ros'
+[0.165s] DEBUG:colcon.colcon_core.package_identification:Package 'src/interfaces' with type 'ros.ament_cmake' and name 'interfaces'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulator) by extensions ['ignore', 'ignore_ament_install']
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulator) by extension 'ignore'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulator) by extension 'ignore_ament_install'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulator) by extensions ['colcon_pkg']
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulator) by extension 'colcon_pkg'
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulator) by extensions ['colcon_meta']
+[0.165s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulator) by extension 'colcon_meta'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulator) by extensions ['ros']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulator) by extension 'ros'
+[0.166s] DEBUG:colcon.colcon_core.package_identification:Package 'src/manipulator' with type 'ros.ament_python' and name 'manipulator'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extension 'ignore'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extension 'ignore_ament_install'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extensions ['colcon_pkg']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extension 'colcon_pkg'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extensions ['colcon_meta']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extension 'colcon_meta'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extensions ['ros']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extension 'ros'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extensions ['cmake', 'python']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extension 'cmake'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extension 'python'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extensions ['python_setup_py']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav) by extension 'python_setup_py'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/build) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/build) by extension 'ignore'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/build) ignored
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/install) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/install) by extension 'ignore'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/install) ignored
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/log) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/log) by extension 'ignore'
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/log) ignored
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/team2_nav) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/team2_nav) by extension 'ignore'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/team2_nav) by extension 'ignore_ament_install'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/team2_nav) by extensions ['colcon_pkg']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/team2_nav) by extension 'colcon_pkg'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/team2_nav) by extensions ['colcon_meta']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/team2_nav) by extension 'colcon_meta'
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/team2_nav) by extensions ['ros']
+[0.167s] Level 1:colcon.colcon_core.package_identification:_identify(src/nav/team2_nav) by extension 'ros'
+[0.172s] DEBUG:colcon.colcon_core.package_identification:Package 'src/nav/team2_nav' with type 'ros.ament_python' and name 'team2_nav'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/object_detection) by extensions ['ignore', 'ignore_ament_install']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/object_detection) by extension 'ignore'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/object_detection) by extension 'ignore_ament_install'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/object_detection) by extensions ['colcon_pkg']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/object_detection) by extension 'colcon_pkg'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/object_detection) by extensions ['colcon_meta']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/object_detection) by extension 'colcon_meta'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/object_detection) by extensions ['ros']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/object_detection) by extension 'ros'
+[0.173s] DEBUG:colcon.colcon_core.package_identification:Package 'src/object_detection' with type 'ros.ament_python' and name 'object_detection'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/rpLidar_lab) by extensions ['ignore', 'ignore_ament_install']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/rpLidar_lab) by extension 'ignore'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/rpLidar_lab) by extension 'ignore_ament_install'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/rpLidar_lab) by extensions ['colcon_pkg']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/rpLidar_lab) by extension 'colcon_pkg'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/rpLidar_lab) by extensions ['colcon_meta']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/rpLidar_lab) by extension 'colcon_meta'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/rpLidar_lab) by extensions ['ros']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/rpLidar_lab) by extension 'ros'
+[0.174s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rpLidar_lab' with type 'ros.ament_python' and name 'rpLidar_lab'
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.174s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.186s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.186s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.188s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/mscrobotics2425laptop3/Robotics_Team2/install
+[0.188s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 34 installed packages in /home/mscrobotics2425laptop3/interbotix_ws/install
+[0.189s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/mscrobotics2425laptop3/apriltag_ws/install
+[0.190s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 406 installed packages in /opt/ros/humble
+[0.191s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.218s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_args' from command line to 'None'
+[0.218s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_target' from command line to 'None'
+[0.218s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.218s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.218s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.219s] DEBUG:colcon.colcon_core.verb:Building package 'interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mscrobotics2425laptop3/Robotics_Team2/build/interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces', 'merge_install': False, 'path': '/home/mscrobotics2425laptop3/Robotics_Team2/src/interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'manipulator' build argument 'cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'manipulator' build argument 'cmake_target' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'manipulator' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'manipulator' build argument 'cmake_clean_cache' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'manipulator' build argument 'cmake_clean_first' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'manipulator' build argument 'cmake_force_configure' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'manipulator' build argument 'ament_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'manipulator' build argument 'catkin_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'manipulator' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.219s] DEBUG:colcon.colcon_core.verb:Building package 'manipulator' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator', 'merge_install': False, 'path': '/home/mscrobotics2425laptop3/Robotics_Team2/src/manipulator', 'symlink_install': False, 'test_result_base': None}
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'object_detection' build argument 'cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'object_detection' build argument 'cmake_target' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'object_detection' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'object_detection' build argument 'cmake_clean_cache' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'object_detection' build argument 'cmake_clean_first' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'object_detection' build argument 'cmake_force_configure' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'object_detection' build argument 'ament_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'object_detection' build argument 'catkin_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'object_detection' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.219s] DEBUG:colcon.colcon_core.verb:Building package 'object_detection' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mscrobotics2425laptop3/Robotics_Team2/build/object_detection', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection', 'merge_install': False, 'path': '/home/mscrobotics2425laptop3/Robotics_Team2/src/object_detection', 'symlink_install': False, 'test_result_base': None}
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'rpLidar_lab' build argument 'cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'rpLidar_lab' build argument 'cmake_target' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'rpLidar_lab' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'rpLidar_lab' build argument 'cmake_clean_cache' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'rpLidar_lab' build argument 'cmake_clean_first' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'rpLidar_lab' build argument 'cmake_force_configure' from command line to 'False'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'rpLidar_lab' build argument 'ament_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'rpLidar_lab' build argument 'catkin_cmake_args' from command line to 'None'
+[0.219s] Level 5:colcon.colcon_core.verb:set package 'rpLidar_lab' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.219s] DEBUG:colcon.colcon_core.verb:Building package 'rpLidar_lab' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mscrobotics2425laptop3/Robotics_Team2/build/rpLidar_lab', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab', 'merge_install': False, 'path': '/home/mscrobotics2425laptop3/Robotics_Team2/src/rpLidar_lab', 'symlink_install': False, 'test_result_base': None}
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'team2_nav' build argument 'cmake_args' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'team2_nav' build argument 'cmake_target' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'team2_nav' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'team2_nav' build argument 'cmake_clean_cache' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'team2_nav' build argument 'cmake_clean_first' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'team2_nav' build argument 'cmake_force_configure' from command line to 'False'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'team2_nav' build argument 'ament_cmake_args' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'team2_nav' build argument 'catkin_cmake_args' from command line to 'None'
+[0.220s] Level 5:colcon.colcon_core.verb:set package 'team2_nav' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.220s] DEBUG:colcon.colcon_core.verb:Building package 'team2_nav' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mscrobotics2425laptop3/Robotics_Team2/build/team2_nav', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav', 'merge_install': False, 'path': '/home/mscrobotics2425laptop3/Robotics_Team2/src/nav/team2_nav', 'symlink_install': False, 'test_result_base': None}
+[0.220s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.220s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.221s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/interfaces' with build type 'ament_cmake'
+[0.221s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/interfaces'
+[0.222s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.222s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.222s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.225s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/manipulator' with build type 'ament_python'
+[0.226s] Level 1:colcon.colcon_core.shell:create_environment_hook('manipulator', 'ament_prefix_path')
+[0.226s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/hook/ament_prefix_path.ps1'
+[0.227s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/hook/ament_prefix_path.dsv'
+[0.228s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/hook/ament_prefix_path.sh'
+[0.229s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.229s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.237s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/object_detection' with build type 'ament_python'
+[0.237s] Level 1:colcon.colcon_core.shell:create_environment_hook('object_detection', 'ament_prefix_path')
+[0.238s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/hook/ament_prefix_path.ps1'
+[0.239s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/hook/ament_prefix_path.dsv'
+[0.239s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/hook/ament_prefix_path.sh'
+[0.240s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.240s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.248s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/rpLidar_lab' with build type 'ament_python'
+[0.248s] Level 1:colcon.colcon_core.shell:create_environment_hook('rpLidar_lab', 'ament_prefix_path')
+[0.248s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/hook/ament_prefix_path.ps1'
+[0.249s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/hook/ament_prefix_path.dsv'
+[0.250s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/hook/ament_prefix_path.sh'
+[0.251s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.251s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.255s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/nav/team2_nav' with build type 'ament_python'
+[0.255s] Level 1:colcon.colcon_core.shell:create_environment_hook('team2_nav', 'ament_prefix_path')
+[0.255s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/hook/ament_prefix_path.ps1'
+[0.256s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/hook/ament_prefix_path.dsv'
+[0.256s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/hook/ament_prefix_path.sh'
+[0.257s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.257s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.266s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mscrobotics2425laptop3/Robotics_Team2/build/interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav:/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab:/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection:/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_xs_modules:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_perception_modules:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_common_modules:/opt/ros/humble /usr/bin/cmake --build /home/mscrobotics2425laptop3/Robotics_Team2/build/interfaces -- -j12 -l12
+[0.544s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/manipulator'
+[0.544s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.544s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.748s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/object_detection'
+[0.749s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.749s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.907s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/rpLidar_lab'
+[0.907s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.907s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.915s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mscrobotics2425laptop3/Robotics_Team2/build/interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav:/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab:/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection:/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_xs_modules:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_perception_modules:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_common_modules:/opt/ros/humble /usr/bin/cmake --build /home/mscrobotics2425laptop3/Robotics_Team2/build/interfaces -- -j12 -l12
+[0.923s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mscrobotics2425laptop3/Robotics_Team2/build/interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav:/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab:/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection:/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_xs_modules:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_perception_modules:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_common_modules:/opt/ros/humble /usr/bin/cmake --install /home/mscrobotics2425laptop3/Robotics_Team2/build/interfaces
+[1.087s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mscrobotics2425laptop3/Robotics_Team2/src/nav/team2_nav'
+[1.087s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.087s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.114s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interfaces)
+[1.115s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mscrobotics2425laptop3/Robotics_Team2/build/interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav:/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab:/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection:/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_xs_modules:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_perception_modules:/home/mscrobotics2425laptop3/interbotix_ws/install/interbotix_common_modules:/opt/ros/humble /usr/bin/cmake --install /home/mscrobotics2425laptop3/Robotics_Team2/build/interfaces
+[1.117s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces' for CMake module files
+[1.118s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces' for CMake config files
+[1.119s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'cmake_prefix_path')
+[1.119s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/cmake_prefix_path.ps1'
+[1.120s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/cmake_prefix_path.dsv'
+[1.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/cmake_prefix_path.sh'
+[1.122s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/lib'
+[1.122s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'ld_library_path_lib')
+[1.123s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/ld_library_path_lib.ps1'
+[1.124s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/ld_library_path_lib.dsv'
+[1.124s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/ld_library_path_lib.sh'
+[1.125s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/bin'
+[1.125s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/lib/pkgconfig/interfaces.pc'
+[1.125s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/lib/python3.10/site-packages'
+[1.125s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/bin'
+[1.126s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.ps1'
+[1.128s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.dsv'
+[1.128s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.sh'
+[1.129s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.bash'
+[1.130s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.zsh'
+[1.130s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/colcon-core/packages/interfaces)
+[1.131s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interfaces)
+[1.132s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces' for CMake module files
+[1.133s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces' for CMake config files
+[1.133s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'cmake_prefix_path')
+[1.134s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/cmake_prefix_path.ps1'
+[1.134s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/cmake_prefix_path.dsv'
+[1.135s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/cmake_prefix_path.sh'
+[1.136s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/lib'
+[1.136s] Level 1:colcon.colcon_core.shell:create_environment_hook('interfaces', 'ld_library_path_lib')
+[1.137s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/ld_library_path_lib.ps1'
+[1.137s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/ld_library_path_lib.dsv'
+[1.138s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/hook/ld_library_path_lib.sh'
+[1.138s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/bin'
+[1.138s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/lib/pkgconfig/interfaces.pc'
+[1.138s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/lib/python3.10/site-packages'
+[1.139s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/bin'
+[1.139s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.ps1'
+[1.140s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.dsv'
+[1.140s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.sh'
+[1.141s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.bash'
+[1.142s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/interfaces/package.zsh'
+[1.142s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mscrobotics2425laptop3/Robotics_Team2/install/interfaces/share/colcon-core/packages/interfaces)
+[1.356s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/object_detection': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/object_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/object_detection build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/object_detection/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/object_detection/install.log --single-version-externally-managed install_data
+[1.373s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/rpLidar_lab': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/rpLidar_lab/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rpLidar_lab build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/rpLidar_lab/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/rpLidar_lab/install.log --single-version-externally-managed install_data
+[1.461s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/nav/team2_nav': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/team2_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/team2_nav build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/team2_nav/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/team2_nav/install.log --single-version-externally-managed install_data
+[1.506s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/manipulator': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/manipulator build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/install.log --single-version-externally-managed install_data
+[1.593s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab' for CMake module files
+[1.594s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/rpLidar_lab' returned '0': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/rpLidar_lab/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rpLidar_lab build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/rpLidar_lab/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/rpLidar_lab/install.log --single-version-externally-managed install_data
+[1.594s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab' for CMake config files
+[1.594s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/lib'
+[1.594s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/bin'
+[1.595s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/lib/pkgconfig/rpLidar_lab.pc'
+[1.595s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/lib/python3.10/site-packages'
+[1.595s] Level 1:colcon.colcon_core.shell:create_environment_hook('rpLidar_lab', 'pythonpath')
+[1.595s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/hook/pythonpath.ps1'
+[1.596s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/hook/pythonpath.dsv'
+[1.596s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/hook/pythonpath.sh'
+[1.597s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/bin'
+[1.597s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rpLidar_lab)
+[1.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/package.ps1'
+[1.598s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/package.dsv'
+[1.598s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/package.sh'
+[1.599s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/package.bash'
+[1.599s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab/package.zsh'
+[1.599s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mscrobotics2425laptop3/Robotics_Team2/install/rpLidar_lab/share/colcon-core/packages/rpLidar_lab)
+[1.698s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav' for CMake module files
+[1.698s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/nav/team2_nav' returned '0': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/team2_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/team2_nav build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/team2_nav/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/team2_nav/install.log --single-version-externally-managed install_data
+[1.699s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav' for CMake config files
+[1.699s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/lib'
+[1.699s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/bin'
+[1.699s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/lib/pkgconfig/team2_nav.pc'
+[1.700s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/lib/python3.10/site-packages'
+[1.700s] Level 1:colcon.colcon_core.shell:create_environment_hook('team2_nav', 'pythonpath')
+[1.700s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/hook/pythonpath.ps1'
+[1.700s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/hook/pythonpath.dsv'
+[1.701s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/hook/pythonpath.sh'
+[1.702s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/bin'
+[1.702s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(team2_nav)
+[1.702s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/package.ps1'
+[1.703s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/package.dsv'
+[1.703s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/package.sh'
+[1.704s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/package.bash'
+[1.704s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/team2_nav/package.zsh'
+[1.704s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mscrobotics2425laptop3/Robotics_Team2/install/team2_nav/share/colcon-core/packages/team2_nav)
+[1.705s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection' for CMake module files
+[1.706s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/object_detection' returned '0': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/object_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/object_detection build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/object_detection/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/object_detection/install.log --single-version-externally-managed install_data
+[1.706s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection' for CMake config files
+[1.707s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/lib'
+[1.707s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/bin'
+[1.707s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/lib/pkgconfig/object_detection.pc'
+[1.707s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/lib/python3.10/site-packages'
+[1.707s] Level 1:colcon.colcon_core.shell:create_environment_hook('object_detection', 'pythonpath')
+[1.707s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/hook/pythonpath.ps1'
+[1.708s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/hook/pythonpath.dsv'
+[1.708s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/hook/pythonpath.sh'
+[1.709s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/bin'
+[1.709s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(object_detection)
+[1.709s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/package.ps1'
+[1.709s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/package.dsv'
+[1.710s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/package.sh'
+[1.710s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/package.bash'
+[1.711s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/object_detection/package.zsh'
+[1.711s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mscrobotics2425laptop3/Robotics_Team2/install/object_detection/share/colcon-core/packages/object_detection)
+[1.784s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator' for CMake module files
+[1.784s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/manipulator' returned '0': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/manipulator build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/install.log --single-version-externally-managed install_data
+[1.785s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator' for CMake config files
+[1.785s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib'
+[1.785s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/bin'
+[1.785s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/pkgconfig/manipulator.pc'
+[1.786s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/python3.10/site-packages'
+[1.786s] Level 1:colcon.colcon_core.shell:create_environment_hook('manipulator', 'pythonpath')
+[1.786s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/hook/pythonpath.ps1'
+[1.786s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/hook/pythonpath.dsv'
+[1.787s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/hook/pythonpath.sh'
+[1.787s] Level 1:colcon.colcon_core.environment:checking '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/bin'
+[1.787s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(manipulator)
+[1.788s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/package.ps1'
+[1.788s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/package.dsv'
+[1.789s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/package.sh'
+[1.789s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/package.bash'
+[1.790s] INFO:colcon.colcon_core.shell:Creating package script '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/manipulator/package.zsh'
+[1.790s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/share/colcon-core/packages/manipulator)
+[1.790s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.790s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.790s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.790s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.795s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.795s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.795s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.802s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.802s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mscrobotics2425laptop3/Robotics_Team2/install/local_setup.ps1'
+[1.803s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mscrobotics2425laptop3/Robotics_Team2/install/_local_setup_util_ps1.py'
+[1.804s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mscrobotics2425laptop3/Robotics_Team2/install/setup.ps1'
+[1.805s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mscrobotics2425laptop3/Robotics_Team2/install/local_setup.sh'
+[1.805s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mscrobotics2425laptop3/Robotics_Team2/install/_local_setup_util_sh.py'
+[1.805s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mscrobotics2425laptop3/Robotics_Team2/install/setup.sh'
+[1.806s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mscrobotics2425laptop3/Robotics_Team2/install/local_setup.bash'
+[1.808s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mscrobotics2425laptop3/Robotics_Team2/install/setup.bash'
+[1.809s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mscrobotics2425laptop3/Robotics_Team2/install/local_setup.zsh'
+[1.809s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mscrobotics2425laptop3/Robotics_Team2/install/setup.zsh'

@@ -1,0 +1,3 @@
+[console_scripts]
+fake = fake_arm.fake:main
+

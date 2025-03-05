@@ -1,0 +1,7 @@
+{
+  "package_name": "package_with_interfaces",
+  "non_idl_tuples": [
+    "/home/mscrobotics2425laptop3/Robotics_Team2/src/package_with_interfaces:msg/ObjectInformation.msg",
+    "/home/mscrobotics2425laptop3/Robotics_Team2/src/package_with_interfaces:srv/ObjectGrab.srv"
+  ]
+}

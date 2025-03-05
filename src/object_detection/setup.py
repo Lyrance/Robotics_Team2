@@ -20,9 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'collect_data =''object_detection.collect_data:main',
-            'predict =''object_detection.predict:main',
-            'test =''object_detection.test:main',
+            'collect_data = object_detection.collect_data:main',
+            'predict = object_detection.predict:main',
+            'test = object_detection.test:main',
         ],
     },
 )

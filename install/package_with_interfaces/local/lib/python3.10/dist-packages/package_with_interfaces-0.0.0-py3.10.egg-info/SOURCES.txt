@@ -1,0 +1,10 @@
+setup.py
+package_with_interfaces/__init__.py
+package_with_interfaces.egg-info/PKG-INFO
+package_with_interfaces.egg-info/SOURCES.txt
+package_with_interfaces.egg-info/dependency_links.txt
+package_with_interfaces.egg-info/top_level.txt
+package_with_interfaces/msg/__init__.py
+package_with_interfaces/msg/_object_information.py
+package_with_interfaces/srv/__init__.py
+package_with_interfaces/srv/_object_grab.py

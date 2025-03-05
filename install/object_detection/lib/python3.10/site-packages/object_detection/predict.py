@@ -6,6 +6,7 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
 from ultralytics import YOLO
+from package_with_interfaces.srv import ObjectGrab
 
 
 class ImageDepthSubscriber(Node):
@@ -21,7 +22,15 @@ class ImageDepthSubscriber(Node):
         self.cv_bridge = CvBridge()
         self.depth_image = None
 
-        self.model = YOLO('/home/mscrobotics2425laptop21/Team2_Workspace/src/object_detection/object_detection/weights/train3/best.pt')
+        #create service client
+        self.client = self.create_client(ObjectGrab, 'object_grab_service')
+        # wait for service to be available
+        while not self.client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('wait for robotic arm service ...')
+
+        self.model = YOLO('/home/mscrobotics2425laptop3/Robotics_Team2/src/object_detection/object_detection/weights/train3/best.pt')
+
+        self.timer = self.create_timer(0.5, self.send_latest_detection)
 
     def listener_callback_color(self, data):
         # self.get_logger().info('Receiving color video frame')
@@ -38,6 +47,8 @@ class ImageDepthSubscriber(Node):
 
         # Perform object detection
         results = self.model.predict(source=color_image, save=False, save_txt=False, conf=0.5)
+
+        detected_objects = []
 
         # Loop through each result and draw bounding boxes
         for result in results:
@@ -63,6 +74,7 @@ class ImageDepthSubscriber(Node):
                     center_y = int((y1 + y2) / 2)
                     if 0 <= center_x < self.depth_image.shape[1] and 0 <= center_y < self.depth_image.shape[0]:
                         distance = self.depth_image[center_y][center_x].astype(float)/10
+                        detected_objects.append((center_x, center_y, distance/100.0))   
                     else:
                         distance = 0.0
 
@@ -71,10 +83,41 @@ class ImageDepthSubscriber(Node):
                                 (0, 255, 0), 2)
                     cv2.circle(color_image, (center_x, center_y), 5, (0, 0, 255), -1)
 
+        if detected_objects:
+            nearest = min(detected_objects, key=lambda x: x[2])
+            self.latest_detected_object = (nearest[0], nearest[1], nearest[2], True)
+        else:
+            self.latest_detected_object = (0.0, 0.0, 0.0, False)
+
         # Display the image
         cv2.imshow("object", color_image)
         cv2.waitKey(1)  # Use 1 to update the window
 
+    def send_latest_detection(self):
+            
+            self.call_service(*self.latest_detected_object)
+
+    def call_service(self, x, y, z, detected):
+            # 创建服务请求
+            request = ObjectGrab.Request()
+            request.object.x = float(x)
+            request.object.y = float(y)
+            request.object.z = float(z)
+            request.object.detected = bool(detected)
+
+            # 异步调用服务
+            future = self.client.call_async(request)
+            future.add_done_callback(self.handle_response)
+        
+    def handle_response(self, future):
+            try:
+                response = future.result()
+                if response.success:
+                    self.get_logger().info('grab success')
+                else:
+                    self.get_logger().info('grab fail')
+            except Exception as e:
+                self.get_logger().info(f'Service call failed {str(e)}')
 
 def main(args=None):
     rclpy.init(args=args)
