@@ -98,14 +98,13 @@ class ImageDepthSubscriber(Node):
             self.call_service(*self.latest_detected_object)
 
     def call_service(self, x, y, z, detected):
-            # 创建服务请求
+           
             request = ObjectGrab.Request()
             request.object.x = float(x)
             request.object.y = float(y)
             request.object.z = float(z)
             request.object.detected = bool(detected)
 
-            # 异步调用服务
             future = self.client.call_async(request)
             future.add_done_callback(self.handle_response)
         

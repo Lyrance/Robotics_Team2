@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 
 # TODO: 根据实际情况导入正确的 GoalPosition 服务消息类型
-from package_interfaces.srv import ObjectGrab
+from package_with_interfaces.srv import ObjectGrab
 
 from interbotix_common_modules.common_robot.robot import (
     create_interbotix_global_node,
@@ -35,15 +35,15 @@ class ServerOfPerceptionAndGrasp(Node):
             robot_name=self.ROBOT_NAME,
             node=self.global_node,
         )
-        self.pcl = InterbotixPointCloudInterface(
-            node_inf=self.global_node,
-        )
-        armtag = InterbotixArmTagInterface(
-            ref_frame=self.REF_FRAME,
-            arm_tag_frame=self.ARM_TAG_FRAME,
-            arm_base_frame=self.ARM_BASE_FRAME,
-            node_inf=self.global_node,
-        )
+        # self.pcl = InterbotixPointCloudInterface(
+        #     node_inf=self.global_node,
+        # )
+        # armtag = InterbotixArmTagInterface(
+        #     ref_frame=self.REF_FRAME,
+        #     arm_tag_frame=self.ARM_TAG_FRAME,
+        #     arm_base_frame=self.ARM_BASE_FRAME,
+        #     node_inf=self.global_node,
+        # )
 
         # Start up the API
         robot_startup(self.global_node)
@@ -52,9 +52,9 @@ class ServerOfPerceptionAndGrasp(Node):
         self.bot.arm.go_to_sleep_pose()
         self.bot.gripper.release()
 
-        # get the ArmTag pose
-        armtag.find_ref_to_arm_base_transform()
-        self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
+        # # get the ArmTag pose
+        # armtag.find_ref_to_arm_base_transform()
+        # self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
 
     def callback(self,request,response):
         """
@@ -93,6 +93,8 @@ class ServerOfPerceptionAndGrasp(Node):
             response.success = True
         else:
             response.success = False
+
+        return response
         
     def perception_and_grasp(self,x, y, z):
         """
