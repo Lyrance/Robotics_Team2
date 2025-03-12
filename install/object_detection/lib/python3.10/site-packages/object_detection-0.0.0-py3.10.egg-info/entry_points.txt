@@ -1,4 +1,0 @@
-[console_scripts]
-collect_data = object_detection.collect_data:main
-predict = object_detection.predict:main
-test = object_detection.test:main

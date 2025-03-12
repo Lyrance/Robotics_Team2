@@ -1,6 +1,0 @@
-msg/ObjectInformation.idl
-msg/ObjectInformation.msg
-srv/ObjectGrab.idl
-srv/ObjectGrab.srv
-srv/ObjectGrab_Request.msg
-srv/ObjectGrab_Response.msg
