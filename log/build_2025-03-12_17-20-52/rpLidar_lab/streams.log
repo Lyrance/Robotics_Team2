@@ -1,0 +1,27 @@
+[12.038s] Invoking command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/rpLidar_lab': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/build/rpLidar_lab/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rpLidar_lab build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/build/rpLidar_lab/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/build/rpLidar_lab/install.log --single-version-externally-managed install_data
+[13.419s] /home/mscrobotics2425laptop16/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[13.420s]   warnings.warn(msg)
+[14.801s] running egg_info
+[14.938s] writing ../../build/rpLidar_lab/rpLidar_lab.egg-info/PKG-INFO
+[14.940s] writing dependency_links to ../../build/rpLidar_lab/rpLidar_lab.egg-info/dependency_links.txt
+[14.940s] writing entry points to ../../build/rpLidar_lab/rpLidar_lab.egg-info/entry_points.txt
+[14.942s] writing requirements to ../../build/rpLidar_lab/rpLidar_lab.egg-info/requires.txt
+[14.942s] writing top-level names to ../../build/rpLidar_lab/rpLidar_lab.egg-info/top_level.txt
+[15.701s] reading manifest file '../../build/rpLidar_lab/rpLidar_lab.egg-info/SOURCES.txt'
+[15.706s] writing manifest file '../../build/rpLidar_lab/rpLidar_lab.egg-info/SOURCES.txt'
+[15.709s] running build
+[15.710s] running build_py
+[15.712s] copying rpLidar_lab/lidar_data_collector.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/rpLidar_lab/build/lib/rpLidar_lab
+[15.716s] copying rpLidar_lab/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/rpLidar_lab/build/lib/rpLidar_lab
+[15.718s] running install
+[15.744s] running install_lib
+[15.988s] running install_data
+[16.004s] copying resource/rpLidar_lab -> /home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab/share/ament_index/resource_index/packages
+[16.011s] copying package.xml -> /home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab/share/rpLidar_lab
+[16.012s] running install_egg_info
+[16.184s] removing '/home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab/lib/python3.10/site-packages/rpLidar_lab-0.0.0-py3.10.egg-info' (and everything under it)
+[16.206s] Copying ../../build/rpLidar_lab/rpLidar_lab.egg-info to /home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab/lib/python3.10/site-packages/rpLidar_lab-0.0.0-py3.10.egg-info
+[16.237s] running install_scripts
+[16.954s] Installing lidar_lab script to /home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab/lib/rpLidar_lab
+[16.955s] writing list of installed files to '/home/mscrobotics2425laptop16/Robotics_Team2/build/rpLidar_lab/install.log'
+[17.018s] Invoked command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/rpLidar_lab' returned '0': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/build/rpLidar_lab/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rpLidar_lab build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/build/rpLidar_lab/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/build/rpLidar_lab/install.log --single-version-externally-managed install_data

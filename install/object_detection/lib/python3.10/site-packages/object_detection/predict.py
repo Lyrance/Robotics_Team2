@@ -28,7 +28,7 @@ class ImageDepthSubscriber(Node):
         while not self.client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('wait for robotic arm service ...')
 
-        self.model = YOLO('/home/mscrobotics2425laptop3/Robotics_Team2/src/object_detection/object_detection/weights/train3/best.pt')
+        self.model = YOLO('/home/mscrobotics2425laptop16/Robotics_Team2/src/object_detection/object_detection/weights/train3/best.pt')
 
         self.timer = self.create_timer(0.5, self.send_latest_detection)
 
@@ -46,7 +46,7 @@ class ImageDepthSubscriber(Node):
             return
 
         # Perform object detection
-        results = self.model.predict(source=color_image, save=False, save_txt=False, conf=0.5)
+        results = self.model.predict(source=color_image, save=False, save_txt=False, conf=0.7)
 
         detected_objects = []
 
@@ -85,25 +85,30 @@ class ImageDepthSubscriber(Node):
 
         if detected_objects:
             nearest = min(detected_objects, key=lambda x: x[2])
-            self.latest_detected_object = (nearest[0], nearest[1], nearest[2], True)
+            self.latest_detected_object = {'x': nearest[0], 'y': nearest[1], 'z': nearest[2], 'detected': True}
         else:
-            self.latest_detected_object = (0.0, 0.0, 0.0, False)
+            self.latest_detected_object = {'x': 0, 'y': 0, 'z': 0, 'detected': False}
 
         # Display the image
         cv2.imshow("object", color_image)
         cv2.waitKey(1)  # Use 1 to update the window
 
     def send_latest_detection(self):
-            
-            self.call_service(*self.latest_detected_object)
+            # self.get_logger().info(f"Passing YOLO coordinates: {self.latest_detected_object}")
+            self.call_service()
 
-    def call_service(self, x, y, z, detected):
-           
+    def call_service(self):
+
+            x = self.latest_detected_object['x']
+            y = self.latest_detected_object['y']
+            z = self.latest_detected_object['z']
+            detected = self.latest_detected_object['detected']
             request = ObjectGrab.Request()
-            request.object.x = float(x)
-            request.object.y = float(y)
-            request.object.z = float(z)
+            request.object.y = float(x)
+            request.object.z= float(y)
+            request.object.x = float(z)
             request.object.detected = bool(detected)
+            # self.get_logger().info(f"Passing YOLO coordinates: {x}, {y}, {z}, {detected}")
 
             future = self.client.call_async(request)
             future.add_done_callback(self.handle_response)

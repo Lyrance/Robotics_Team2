@@ -4,7 +4,6 @@ setup.py
 ../../../build/team2_nav/team2_nav.egg-info/PKG-INFO
 ../../../build/team2_nav/team2_nav.egg-info/SOURCES.txt
 ../../../build/team2_nav/team2_nav.egg-info/dependency_links.txt
-../../../build/team2_nav/team2_nav.egg-info/entry_points.txt
 ../../../build/team2_nav/team2_nav.egg-info/requires.txt
 ../../../build/team2_nav/team2_nav.egg-info/top_level.txt
 ../../../build/team2_nav/team2_nav.egg-info/zip-safe

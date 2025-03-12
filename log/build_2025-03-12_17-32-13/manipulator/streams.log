@@ -1,0 +1,29 @@
+[2.355s] Invoking command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/manipulator': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/manipulator build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/install.log --single-version-externally-managed install_data
+[2.825s] /home/mscrobotics2425laptop16/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[2.825s]   warnings.warn(msg)
+[3.077s] running egg_info
+[3.119s] writing ../../build/manipulator/manipulator.egg-info/PKG-INFO
+[3.120s] writing dependency_links to ../../build/manipulator/manipulator.egg-info/dependency_links.txt
+[3.121s] writing entry points to ../../build/manipulator/manipulator.egg-info/entry_points.txt
+[3.121s] writing requirements to ../../build/manipulator/manipulator.egg-info/requires.txt
+[3.121s] writing top-level names to ../../build/manipulator/manipulator.egg-info/top_level.txt
+[3.217s] reading manifest file '../../build/manipulator/manipulator.egg-info/SOURCES.txt'
+[3.220s] writing manifest file '../../build/manipulator/manipulator.egg-info/SOURCES.txt'
+[3.220s] running build
+[3.220s] running build_py
+[3.221s] copying manipulator/server_of_perception_for_grasp.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/build/lib/manipulator
+[3.221s] copying manipulator/garsp_test.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/build/lib/manipulator
+[3.222s] copying manipulator/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/build/lib/manipulator
+[3.222s] copying manipulator/ee_pose.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/build/lib/manipulator
+[3.223s] running install
+[3.236s] running install_lib
+[3.318s] running install_data
+[3.318s] copying resource/manipulator -> /home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator/share/ament_index/resource_index/packages
+[3.319s] copying package.xml -> /home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator/share/manipulator
+[3.320s] running install_egg_info
+[3.395s] removing '/home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator/lib/python3.10/site-packages/manipulator-0.0.0-py3.10.egg-info' (and everything under it)
+[3.397s] Copying ../../build/manipulator/manipulator.egg-info to /home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator/lib/python3.10/site-packages/manipulator-0.0.0-py3.10.egg-info
+[3.399s] running install_scripts
+[3.931s] Installing ServerOfPerceptionAndGrasp script to /home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator/lib/manipulator
+[3.934s] writing list of installed files to '/home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/install.log'
+[4.025s] Invoked command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/manipulator' returned '0': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/manipulator build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/build/manipulator/install.log --single-version-externally-managed install_data

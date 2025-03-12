@@ -1,0 +1,182 @@
+[0.145s] Invoking command in '/home/mscrobotics2425laptop16/Robotics_Team2/build/package_with_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav:/home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab:/home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator:/home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection:/home/mscrobotics2425laptop16/Robotics_Team2/install/fake_arm:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_xs_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_perception_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_common_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/mscrobotics2425laptop16/Robotics_Team2/build/package_with_interfaces -- -j12 -l12
+[1.863s] [  2%] Built target package_with_interfaces__cpp
+[1.866s] [ 12%] Built target package_with_interfaces__rosidl_generator_c
+[1.867s] [ 12%] Built target ament_cmake_python_copy_package_with_interfaces
+[1.867s] [ 23%] Built target package_with_interfaces__rosidl_typesupport_cpp
+[1.867s] [ 33%] Built target package_with_interfaces__rosidl_typesupport_introspection_cpp
+[1.867s] [ 43%] Built target package_with_interfaces__rosidl_typesupport_fastrtps_cpp
+[1.867s] [ 53%] Built target package_with_interfaces__rosidl_typesupport_fastrtps_c
+[1.868s] [ 64%] Built target package_with_interfaces__rosidl_typesupport_introspection_c
+[1.868s] [ 74%] Built target package_with_interfaces__rosidl_typesupport_c
+[1.868s] [ 74%] Built target package_with_interfaces
+[1.868s] [ 76%] Built target package_with_interfaces__py
+[1.868s] [ 84%] Built target package_with_interfaces__rosidl_generator_py
+[1.868s] [ 89%] Built target package_with_interfaces__rosidl_typesupport_c__pyext
+[1.869s] [ 94%] Built target package_with_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[1.869s] [100%] Built target package_with_interfaces__rosidl_typesupport_introspection_c__pyext
+[1.869s] running egg_info
+[1.869s] writing package_with_interfaces.egg-info/PKG-INFO
+[1.869s] writing dependency_links to package_with_interfaces.egg-info/dependency_links.txt
+[1.869s] writing top-level names to package_with_interfaces.egg-info/top_level.txt
+[1.870s] reading manifest file 'package_with_interfaces.egg-info/SOURCES.txt'
+[1.870s] writing manifest file 'package_with_interfaces.egg-info/SOURCES.txt'
+[1.870s] [100%] Built target ament_cmake_python_build_package_with_interfaces_egg
+[2.382s] Invoked command in '/home/mscrobotics2425laptop16/Robotics_Team2/build/package_with_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav:/home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab:/home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator:/home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection:/home/mscrobotics2425laptop16/Robotics_Team2/install/fake_arm:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_xs_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_perception_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_common_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/control_pkg:/opt/ros/humble /usr/bin/cmake --build /home/mscrobotics2425laptop16/Robotics_Team2/build/package_with_interfaces -- -j12 -l12
+[2.399s] Invoking command in '/home/mscrobotics2425laptop16/Robotics_Team2/build/package_with_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav:/home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab:/home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator:/home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection:/home/mscrobotics2425laptop16/Robotics_Team2/install/fake_arm:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_xs_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_perception_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_common_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/mscrobotics2425laptop16/Robotics_Team2/build/package_with_interfaces
+[2.427s] -- Install configuration: ""
+[2.427s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/ament_index/resource_index/rosidl_interfaces/package_with_interfaces
+[2.428s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces
+[2.428s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv
+[2.428s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail
+[2.429s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__type_support.h
+[2.429s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__struct.h
+[2.429s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__functions.h
+[2.429s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__functions.c
+[2.429s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/object_grab.h
+[2.429s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg
+[2.429s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail
+[2.429s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__functions.h
+[2.430s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__type_support.h
+[2.431s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__struct.h
+[2.431s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__functions.c
+[2.431s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/object_information.h
+[2.431s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/rosidl_generator_c__visibility_control.h
+[2.431s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/environment/library_path.sh
+[2.432s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/environment/library_path.dsv
+[2.433s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/lib/libpackage_with_interfaces__rosidl_generator_c.so
+[2.433s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces
+[2.434s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv
+[2.434s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail
+[2.435s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__rosidl_typesupport_fastrtps_c.h
+[2.435s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg
+[2.435s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail
+[2.436s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__rosidl_typesupport_fastrtps_c.h
+[2.436s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[2.436s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/lib/libpackage_with_interfaces__rosidl_typesupport_fastrtps_c.so
+[2.436s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces
+[2.436s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv
+[2.437s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail
+[2.437s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__type_support.c
+[2.437s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__rosidl_typesupport_introspection_c.h
+[2.437s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg
+[2.437s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[2.438s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail
+[2.438s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__type_support.c
+[2.438s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__rosidl_typesupport_introspection_c.h
+[2.438s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/lib/libpackage_with_interfaces__rosidl_typesupport_introspection_c.so
+[2.438s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/lib/libpackage_with_interfaces__rosidl_typesupport_c.so
+[2.438s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces
+[2.439s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv
+[2.439s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/object_grab.hpp
+[2.439s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail
+[2.439s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__traits.hpp
+[2.439s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__type_support.hpp
+[2.439s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__struct.hpp
+[2.439s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__builder.hpp
+[2.440s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg
+[2.440s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail
+[2.440s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__struct.hpp
+[2.440s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__builder.hpp
+[2.440s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__type_support.hpp
+[2.440s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__traits.hpp
+[2.440s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/object_information.hpp
+[2.441s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[2.441s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces
+[2.441s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv
+[2.441s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail
+[2.442s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__rosidl_typesupport_fastrtps_cpp.hpp
+[2.442s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/dds_fastrtps
+[2.442s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg
+[2.442s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__rosidl_typesupport_fastrtps_cpp.hpp
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/dds_fastrtps
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/lib/libpackage_with_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__type_support.cpp
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/srv/detail/object_grab__rosidl_typesupport_introspection_cpp.hpp
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__type_support.cpp
+[2.443s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/include/package_with_interfaces/package_with_interfaces/msg/detail/object_information__rosidl_typesupport_introspection_cpp.hpp
+[2.444s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/lib/libpackage_with_interfaces__rosidl_typesupport_introspection_cpp.so
+[2.444s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/lib/libpackage_with_interfaces__rosidl_typesupport_cpp.so
+[2.444s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/environment/pythonpath.sh
+[2.444s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/environment/pythonpath.dsv
+[2.444s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces-0.0.0-py3.10.egg-info
+[2.444s] -- Installing: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[2.444s] -- Installing: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[2.444s] -- Installing: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[2.444s] -- Installing: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[2.444s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces
+[2.444s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/libpackage_with_interfaces__rosidl_generator_py.so
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/_package_with_interfaces_s.ep.rosidl_typesupport_c.c
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/_package_with_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/__init__.py
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/package_with_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/srv
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/srv/__init__.py
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/srv/_object_grab_s.c
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/srv/_object_grab.py
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/msg
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/msg/_object_information_s.c
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/msg/__init__.py
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/msg/_object_information.py
+[2.445s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/_package_with_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[2.446s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/package_with_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.446s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/package_with_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.572s] Listing '/home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces'...
+[2.573s] Listing '/home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/msg'...
+[2.573s] Listing '/home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/srv'...
+[2.587s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/package_with_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.588s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/package_with_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.589s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages/package_with_interfaces/package_with_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.589s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/lib/libpackage_with_interfaces__rosidl_generator_py.so
+[2.590s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/msg/ObjectInformation.idl
+[2.590s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/srv/ObjectGrab.idl
+[2.590s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/msg/ObjectInformation.msg
+[2.590s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/srv/ObjectGrab.srv
+[2.591s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/srv/ObjectGrab_Request.msg
+[2.591s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/srv/ObjectGrab_Response.msg
+[2.592s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/ament_index/resource_index/package_run_dependencies/package_with_interfaces
+[2.592s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/ament_index/resource_index/parent_prefix_path/package_with_interfaces
+[2.593s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/environment/ament_prefix_path.sh
+[2.593s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/environment/ament_prefix_path.dsv
+[2.594s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/environment/path.sh
+[2.594s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/environment/path.dsv
+[2.594s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/local_setup.bash
+[2.594s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/local_setup.sh
+[2.595s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/local_setup.zsh
+[2.595s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/local_setup.dsv
+[2.596s] -- Installing: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/package.dsv
+[2.596s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/ament_index/resource_index/packages/package_with_interfaces
+[2.596s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/export_package_with_interfaces__rosidl_generator_cExport.cmake
+[2.597s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/export_package_with_interfaces__rosidl_generator_cExport-noconfig.cmake
+[2.597s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/export_package_with_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[2.597s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/export_package_with_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[2.597s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[2.598s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[2.598s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfaces__rosidl_typesupport_cExport.cmake
+[2.598s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[2.598s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/export_package_with_interfaces__rosidl_generator_cppExport.cmake
+[2.602s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/export_package_with_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[2.603s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/export_package_with_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[2.603s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[2.603s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[2.603s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfaces__rosidl_typesupport_cppExport.cmake
+[2.604s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[2.605s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/export_package_with_interfaces__rosidl_generator_pyExport.cmake
+[2.607s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/export_package_with_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[2.611s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/rosidl_cmake-extras.cmake
+[2.611s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.612s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[2.612s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[2.612s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[2.612s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.612s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[2.613s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfacesConfig.cmake
+[2.613s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/cmake/package_with_interfacesConfig-version.cmake
+[2.613s] -- Up-to-date: /home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces/share/package_with_interfaces/package.xml
+[2.613s] Invoked command in '/home/mscrobotics2425laptop16/Robotics_Team2/build/package_with_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav:/home/mscrobotics2425laptop16/Robotics_Team2/install/rpLidar_lab:/home/mscrobotics2425laptop16/Robotics_Team2/install/manipulator:/home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection:/home/mscrobotics2425laptop16/Robotics_Team2/install/fake_arm:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_xs_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_perception_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/interbotix_common_modules:/home/mscrobotics2425laptop16/interbotix_ws/install/control_pkg:/opt/ros/humble /usr/bin/cmake --install /home/mscrobotics2425laptop16/Robotics_Team2/build/package_with_interfaces

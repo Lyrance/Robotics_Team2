@@ -1,3 +1,9 @@
+"""
+ros2 launch interbotix_xsarm_control xsarm_control.launch robot_model:=px150
+
+ros2 run manipulator ServerOfPerceptionAndGrasp
+"""
+
 import rclpy
 from rclpy.node import Node
 
@@ -84,9 +90,11 @@ class ServerOfPerceptionAndGrasp(Node):
         #     return response
 
         x = request.object.x
-        y = request.object.y
-        z = request.object.z
+        y = request.object.y / 1000
+        z = request.object.z / 1000
         detected = request.object.detected
+
+        self.get_logger().info(f"Passing YOLO coordinates: x: {x}, y: {y}, z: {z}")
 
         if detected:
             self.perception_and_grasp(x, y, z)
@@ -104,19 +112,22 @@ class ServerOfPerceptionAndGrasp(Node):
         # for cluster in clusters:
         #     x, y, z = cluster['position']
         try:
-            
+
+            self.bot.gripper.release()
             self.bot.arm.set_ee_pose_components(x=x, y=y, z=z + 0.05, pitch=0.5)
             self.bot.arm.set_ee_pose_components(x=x, y=y, z=z, pitch=0.5)
             self.bot.gripper.grasp()
 
             
-            self.bot.arm.set_ee_pose_components(x=x, y=y, z=z + 0.05, pitch=0.5)
-            self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
-            self.bot.gripper.release()
+            # self.bot.arm.set_ee_pose_components(x=x, y=y, z=z + 0.05, pitch=0.5)
+            # self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
+            # self.bot.gripper.grasp()
 
             
-            self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
-            self.bot.arm.go_to_sleep_pose()
+            # self.bot.arm.set_ee_pose_components(x=0.8, z=0.8)
+            #self.bot.arm.go_to_sleep_pose()
+            self.bot.arm.set_ee_pose_components(x=0.15,y = 0, z=0.16) # sleep pose
+            self.bot.gripper.release()
 
             self.get_logger().info("grab success")
             return True

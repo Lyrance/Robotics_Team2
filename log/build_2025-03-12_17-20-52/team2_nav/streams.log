@@ -1,0 +1,44 @@
+[10.919s] Invoking command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/nav/team2_nav': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/build/team2_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/team2_nav build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/build/team2_nav/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/build/team2_nav/install.log --single-version-externally-managed install_data
+[12.717s] /home/mscrobotics2425laptop16/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[12.717s]   warnings.warn(msg)
+[13.804s] running egg_info
+[13.887s] writing ../../../build/team2_nav/team2_nav.egg-info/PKG-INFO
+[13.898s] writing dependency_links to ../../../build/team2_nav/team2_nav.egg-info/dependency_links.txt
+[13.898s] writing requirements to ../../../build/team2_nav/team2_nav.egg-info/requires.txt
+[13.898s] writing top-level names to ../../../build/team2_nav/team2_nav.egg-info/top_level.txt
+[14.082s] reading manifest file '../../../build/team2_nav/team2_nav.egg-info/SOURCES.txt'
+[14.084s] writing manifest file '../../../build/team2_nav/team2_nav.egg-info/SOURCES.txt'
+[14.084s] running build
+[14.085s] running build_py
+[14.086s] copying team2_nav/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/team2_nav/build/lib/team2_nav
+[14.088s] running install
+[14.104s] running install_lib
+[14.198s] running install_data
+[14.199s] copying resource/team2_nav -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/ament_index/resource_index/packages
+[14.205s] copying package.xml -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav
+[14.206s] copying launch/leo_rover.launch.py -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/launch
+[14.211s] copying launch/nav.launch.py -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/launch
+[14.212s] copying config/controller.yaml -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/config
+[14.217s] copying config/bt_nav.yaml -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/config
+[14.218s] copying config/imu_filter_params.yaml -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/config
+[14.218s] copying config/localization_params.yaml -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/config
+[14.230s] copying config/planner.yaml -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/config
+[14.231s] copying urdf/leo.urdf -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/urdf
+[14.231s] copying meshes/Generic_100mm_lidar.stl -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/meshes
+[14.231s] copying models/Wheel_outline.stl -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.231s] copying models/Mecanum_wheel_outline.stl -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.232s] copying models/Rocker_outline.stl -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.232s] copying models/Chassis_outline.stl -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.232s] copying models/WheelMecanumA.dae -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.243s] copying models/Chassis.dae -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.268s] copying models/Antenna.dae -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.270s] copying models/WheelA.dae -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.275s] copying models/Rocker.dae -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.286s] copying models/WheelMecanumB.dae -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.303s] copying models/WheelB.dae -> /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/share/team2_nav/models
+[14.308s] running install_egg_info
+[14.401s] removing '/home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/lib/python3.10/site-packages/team2_nav-0.0.0-py3.10.egg-info' (and everything under it)
+[14.404s] Copying ../../../build/team2_nav/team2_nav.egg-info to /home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/lib/python3.10/site-packages/team2_nav-0.0.0-py3.10.egg-info
+[14.404s] running install_scripts
+[15.080s] writing list of installed files to '/home/mscrobotics2425laptop16/Robotics_Team2/build/team2_nav/install.log'
+[15.201s] Invoked command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/nav/team2_nav' returned '0': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/build/team2_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/install/team2_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/team2_nav build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/build/team2_nav/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/build/team2_nav/install.log --single-version-externally-managed install_data

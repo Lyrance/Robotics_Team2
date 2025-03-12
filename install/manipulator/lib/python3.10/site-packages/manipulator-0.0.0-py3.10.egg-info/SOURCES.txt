@@ -9,6 +9,8 @@ setup.py
 ../../build/manipulator/manipulator.egg-info/top_level.txt
 ../../build/manipulator/manipulator.egg-info/zip-safe
 manipulator/__init__.py
+manipulator/ee_pose.py
+manipulator/garsp_test.py
 manipulator/server_of_perception_for_grasp.py
 resource/manipulator
 test/test_copyright.py

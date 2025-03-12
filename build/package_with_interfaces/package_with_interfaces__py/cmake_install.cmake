@@ -1,8 +1,8 @@
-# Install script for directory: /home/mscrobotics2425laptop3/Robotics_Team2/build/package_with_interfaces/package_with_interfaces__py
+# Install script for directory: /home/mscrobotics2425laptop16/Robotics_Team2/build/package_with_interfaces/package_with_interfaces__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mscrobotics2425laptop3/Robotics_Team2/install/package_with_interfaces")
+  set(CMAKE_INSTALL_PREFIX "/home/mscrobotics2425laptop16/Robotics_Team2/install/package_with_interfaces")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

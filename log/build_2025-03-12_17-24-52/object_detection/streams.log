@@ -1,0 +1,30 @@
+[7.029s] Invoking command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/object_detection': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/object_detection build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/install.log --single-version-externally-managed install_data
+[7.533s] /home/mscrobotics2425laptop16/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[7.533s]   warnings.warn(msg)
+[7.888s] running egg_info
+[7.943s] writing ../../build/object_detection/object_detection.egg-info/PKG-INFO
+[7.944s] writing dependency_links to ../../build/object_detection/object_detection.egg-info/dependency_links.txt
+[7.949s] writing entry points to ../../build/object_detection/object_detection.egg-info/entry_points.txt
+[7.950s] writing requirements to ../../build/object_detection/object_detection.egg-info/requires.txt
+[7.950s] writing top-level names to ../../build/object_detection/object_detection.egg-info/top_level.txt
+[8.064s] reading manifest file '../../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[8.066s] writing manifest file '../../build/object_detection/object_detection.egg-info/SOURCES.txt'
+[8.066s] running build
+[8.070s] running build_py
+[8.070s] copying object_detection/collect_data.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/build/lib/object_detection
+[8.070s] copying object_detection/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/build/lib/object_detection
+[8.070s] copying object_detection/predict.py -> /home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/build/lib/object_detection
+[8.075s] running install
+[8.080s] running install_lib
+[8.133s] running install_data
+[8.133s] copying resource/object_detection -> /home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection/share/ament_index/resource_index/packages
+[8.134s] copying package.xml -> /home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection/share/object_detection
+[8.135s] running install_egg_info
+[8.190s] removing '/home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection/lib/python3.10/site-packages/object_detection-0.0.0-py3.10.egg-info' (and everything under it)
+[8.191s] Copying ../../build/object_detection/object_detection.egg-info to /home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection/lib/python3.10/site-packages/object_detection-0.0.0-py3.10.egg-info
+[8.192s] running install_scripts
+[9.169s] Installing collect_data script to /home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection/lib/object_detection
+[9.181s] Installing predict script to /home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection/lib/object_detection
+[9.196s] Installing test script to /home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection/lib/object_detection
+[9.197s] writing list of installed files to '/home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/install.log'
+[9.333s] Invoked command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/object_detection' returned '0': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/install/object_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/object_detection build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/build/object_detection/install.log --single-version-externally-managed install_data
