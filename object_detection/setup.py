@@ -23,6 +23,8 @@ setup(
             'collect_data = object_detection.collect_data:main',
             'predict = object_detection.predict:main',
             'test = object_detection.test:main',
+            'color_predict = object_detection.color_predict:main',
+            'find_range = object_detection.find_range:main',
         ],
     },
 )

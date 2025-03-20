@@ -1,138 +1,191 @@
 import numpy as np
 import rclpy
-from imgviz.external.transformations import rotation_matrix
 from rclpy.node import Node
 from sensor_msgs.msg import Image
+from std_msgs.msg import String
 from cv_bridge import CvBridge
 import cv2
 from ultralytics import YOLO
+
 from package_with_interfaces.srv import ObjectGrab
 
 
 class ImageDepthSubscriber(Node):
     def __init__(self, name):
         super().__init__(name)
+
+        # 订阅彩色 & 深度图像
         self.sub_color = self.create_subscription(
-            Image, '/camera/camera/color/image_raw', self.listener_callback_color, 10
+            Image, '/camera/camera/color/image_raw', self.callback_color, 10
         )
         self.sub_depth = self.create_subscription(
-            Image, '/camera/camera/aligned_depth_to_color/image_raw', self.listener_callback_depth, 10
+            Image, '/camera/camera/aligned_depth_to_color/image_raw', self.callback_depth, 10
+        )
+
+        # 订阅 /rover_status 获取当前状态
+        self.sub_status = self.create_subscription(
+            String, '/rover_status', self.status_callback, 10
         )
 
         self.cv_bridge = CvBridge()
         self.depth_image = None
 
-        #create service client
+        # 创建服务客户端 -> /object_grab_service
         self.client = self.create_client(ObjectGrab, 'object_grab_service')
-        # wait for service to be available
         while not self.client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('wait for robotic arm service ...')
 
+        # 加载 YOLO 模型
         self.model = YOLO('/home/mscrobotics2425laptop16/Robotics_Team2/src/object_detection/object_detection/weights/train3/best.pt')
 
+        # 每0.5s检查是否需要发送坐标
         self.timer = self.create_timer(0.5, self.send_latest_detection)
 
-    def listener_callback_color(self, data):
-        # self.get_logger().info('Receiving color video frame')
-        color_image = self.cv_bridge.imgmsg_to_cv2(data, 'bgr8')
-        self.dectection(color_image)
+        # 存储最近检测到的目标信息
+        # (center_x_px, center_y_px, distance_m, detected)
+        self.latest_detected_object = {'x': 0.0, 'y': 0.0, 'z': 0.0, 'detected': False}
 
-    def listener_callback_depth(self, data):
-        # self.get_logger().info('Receiving depth video frame')
+        self.in_progress = False  # 表示是否正在抓取
+        self.current_state = "INITIATE"  # 默认为 INITIATE
+
+    def status_callback(self, msg: String):
+        """
+        订阅 /rover_status, 用于判断只有在 'GRAB' 状态下才进行检测
+        """
+        self.current_state = msg.data
+        self.get_logger().info(f"[ImageDepthSubscriber] Current State: {self.current_state}")
+
+    def callback_depth(self, data):
+        """接收并存储深度图像"""
         self.depth_image = self.cv_bridge.imgmsg_to_cv2(data, '16UC1')
 
-    def dectection(self, color_image):
-        if self.depth_image is None:
-            return
+    def callback_color(self, data):
+        """只在 GRAB 状态下执行 YOLO 检测"""
+        if self.current_state != "GRAB":
+            return  # 若不在 GRAB, 则不做检测
 
-        # Perform object detection
+        if self.depth_image is None:
+            return  # 尚未有深度图, 不做检测
+
+        # 执行 YOLO
+        color_image = self.cv_bridge.imgmsg_to_cv2(data, 'bgr8')
         results = self.model.predict(source=color_image, save=False, save_txt=False, conf=0.7)
 
         detected_objects = []
 
-        # Loop through each result and draw bounding boxes
         for result in results:
-            if result.boxes is not None:  # Ensure there are boxes to process
-                boxes = result.boxes.xyxy.numpy()  # Get the box coordinates
-                confidences = result.boxes.conf.numpy()  # Get the confidence scores
-                class_ids = result.boxes.cls.numpy().astype(int)  # Get class indices
+            if result.boxes is not None:
+                boxes = result.boxes.xyxy.numpy()
+                confidences = result.boxes.conf.numpy()
+                class_ids = result.boxes.cls.numpy().astype(int)
 
                 for i in range(len(boxes)):
-                    box = boxes[i]  # Each box is in [x1, y1, x2, y2] format
-                    x1, y1, x2, y2 = box  # Unpack the coordinates
-                    cv2.rectangle(color_image, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)  # Draw rectangle
+                    x1, y1, x2, y2 = boxes[i]
+                    cv2.rectangle(color_image, (int(x1), int(y1)), (int(x2), int(y2)),
+                                  (0, 255, 0), 2)
 
-                    # Get the label and confidence
-                    label_idx = class_ids[i]  # Class index
-                    conf = confidences[i]  # Confidence score
-                    label = result.names[label_idx]  # Get the class name
+                    label_idx = class_ids[i]
+                    conf = confidences[i]
+                    label = result.names[label_idx]
 
-                    # Calculate position for the label
-                    label_position = (int(x1), int(y1) - 10)  # Slightly above the box
+                    label_position = (int(x1), int(y1) - 10)
 
                     center_x = int((x1 + x2) / 2)
                     center_y = int((y1 + y2) / 2)
-                    if 0 <= center_x < self.depth_image.shape[1] and 0 <= center_y < self.depth_image.shape[0]:
-                        distance = self.depth_image[center_y][center_x].astype(float)/10
-                        detected_objects.append((center_x, center_y, distance/100.0))   
-                    else:
-                        distance = 0.0
 
-                    # Put the label and confidence on the image
-                    cv2.putText(color_image, f'{label} {conf:.2f} Dis: {distance:.2f} cm', label_position, cv2.FONT_HERSHEY_SIMPLEX, 0.5,
-                                (0, 255, 0), 2)
+                    distance_m = 0.0
+                    if (0 <= center_x < self.depth_image.shape[1] and
+                        0 <= center_y < self.depth_image.shape[0]):
+                        distance_mm = self.depth_image[center_y, center_x]
+                        distance_m = distance_mm * 0.001  # mm -> m
+
+                        detected_objects.append((center_x, center_y, distance_m))
+
+                    cv2.putText(color_image,
+                                f'{label} {conf:.2f} Dis: {distance_m:.2f} m',
+                                label_position,
+                                cv2.FONT_HERSHEY_SIMPLEX,
+                                0.5, (0, 255, 0), 2)
                     cv2.circle(color_image, (center_x, center_y), 5, (0, 0, 255), -1)
 
         if detected_objects:
+            # 找最近物体
             nearest = min(detected_objects, key=lambda x: x[2])
-            self.latest_detected_object = {'x': nearest[0], 'y': nearest[1], 'z': nearest[2], 'detected': True}
+            self.latest_detected_object = {
+                'x': nearest[0],  # 像素坐标 x
+                'y': nearest[1],  # 像素坐标 y
+                'z': nearest[2],  # 距离 m
+                'detected': True
+            }
         else:
-            self.latest_detected_object = {'x': 0, 'y': 0, 'z': 0, 'detected': False}
+            self.latest_detected_object = {
+                'x': 0.0,
+                'y': 0.0,
+                'z': 0.0,
+                'detected': False
+            }
 
-        # Display the image
-        cv2.imshow("object", color_image)
-        cv2.waitKey(1)  # Use 1 to update the window
+        cv2.imshow("YOLO Detect (GRAB)", color_image)
+        cv2.waitKey(1)
 
     def send_latest_detection(self):
-            # self.get_logger().info(f"Passing YOLO coordinates: {self.latest_detected_object}")
+        """
+        每0.5s检查是否要调用 /object_grab_service
+        条件:
+         1) latest_detected_object['detected'] == True
+         2) 距离 <0.3
+         3) 当前不在抓取中 (in_progress=False)
+         4) 当前状态是 GRAB
+        """
+        dist = self.latest_detected_object['z']
+        if (self.current_state == "GRAB" and self.latest_detected_object['detected'] and dist>0.2 and dist<0.3 and not self.in_progress):
+            self.get_logger().info(f"Distance <0.3m => sending service request: {self.latest_detected_object}")
+            self.in_progress = True
             self.call_service()
 
     def call_service(self):
+        # 这里将 (x,y,z) 分别对应到 request.object.x, .y, .z
+        # 也可根据你的 srv 定义做改动
+        x_px = self.latest_detected_object['x']  # 像素坐标
+        y_px = self.latest_detected_object['y']
+        dist_m = self.latest_detected_object['z']
+        detected = self.latest_detected_object['detected']
 
-            x = self.latest_detected_object['x']
-            y = self.latest_detected_object['y']
-            z = self.latest_detected_object['z']
-            detected = self.latest_detected_object['detected']
-            request = ObjectGrab.Request()
-            request.object.y = float(x)
-            request.object.z= float(y)
-            request.object.x = float(z)
-            request.object.detected = bool(detected)
-            # self.get_logger().info(f"Passing YOLO coordinates: {x}, {y}, {z}, {detected}")
+        request = ObjectGrab.Request()
+        request.object.y = float(x_px)
+        request.object.z = float(y_px)
+        request.object.x = float(dist_m)
+        request.object.detected = bool(detected)
 
-            future = self.client.call_async(request)
-            future.add_done_callback(self.handle_response)
-        
+        future = self.client.call_async(request)
+        future.add_done_callback(self.handle_response)
+
     def handle_response(self, future):
-            try:
-                response = future.result()
-                if response.success:
-                    self.get_logger().info('grab success')
-                else:
-                    self.get_logger().info('grab fail')
-            except Exception as e:
-                self.get_logger().info(f'Service call failed {str(e)}')
+        try:
+            response = future.result()
+            if response.success:
+                self.get_logger().info('Grab success -> setting in_progress = False')
+            else:
+                self.get_logger().info('Grab fail -> setting in_progress = False')
+        except Exception as e:
+            self.get_logger().error(f'Service call failed: {str(e)}')
+        # 无论成功或失败，都可以再次发送
+        self.in_progress = False
 
 def main(args=None):
     rclpy.init(args=args)
     node = ImageDepthSubscriber("image_depth_sub")
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
-
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
+
 
 # launch camera command:
 # ros2 launch realsense2_camera rs_launch.py depth_module.depth_profile:=848x480x30 rgb_camera.color_profile:=848x480x30 align_depth.enable:=true pointcloud.enable:=true
