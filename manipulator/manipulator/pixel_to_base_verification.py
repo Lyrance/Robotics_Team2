@@ -20,41 +20,18 @@ from interbotix_perception_modules.pointcloud import InterbotixPointCloudInterfa
 from interbotix_xs_modules.xs_robot.arm import InterbotixManipulatorXS
 
 import numpy as np
-from math import cos, sin, pi
-
-"""
-This script makes the end-effector go to a specific pose by defining the pose components
-
-To get started, open a terminal and type:
-
-    ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:=px150
-
-Then change to this directory and type:
-
-    python3 ee_pose.py
-"""
-import cv2
-import numpy as np  
-
-# Get the center of the object by using mask
-# (u, v) = 图像坐标（像素单位）--> (x, y) (def dectection function) (get!)
-# Z = 深度图中的深度值（米或毫米）--> (z) distance = self.depth_image[center_y][center_x].astype(float)/10
-# (cx, cy) = 相机的光心（Principal Point）(get!)
-# fx, fy = 相机焦距（Focal Length）(get!)
 
 color_intr = {"ppx": 429.7027587890625, "ppy": 247.5892333984375, "fx": 606.6625366210938, "fy": 606.3907470703125}  # RGB相机内参 ppx, ppy = cx, cy
 depth_intr = {"ppx": 426.28863525390625 , "ppy": 235.5947265625, "fx": 431.85052490234375, "fy": 431.85052490234375}  # 深度相机内参
 
 #从像素坐标到相机坐标系的转换
-def transform_pixel_to_camera(x, y, z,color_intr): #pixel coordinates(x,y), x represent distance, y,z need to be transform
+def transform_pixel_to_camera(x, y, z,color_intr): #pixel coordinates(x,y), z represent distance
     res = np.array([[x],[y],[z],[1]])
     # yolo给出的坐标原点在图像的左上方
     # 单位变换
-    res[0] = x  # distance in meter 世界坐标系的x轴为distance
-    distance = x
-    res[1] = (y - color_intr["ppx"])* distance / color_intr["fx"] # 单位与distance的单位一致
-    res[2] = (z - color_intr["ppy"])* distance / color_intr["fy"]
-    
+    res[0] = (x - color_intr["ppx"])* z / color_intr["fx"]
+    res[1] = (y - color_intr["ppy"])* z / color_intr["fy"]
+    res[2] = z # distance in meter 世界坐标系的x轴为distance
     # 单位为m
 
     return res
@@ -68,9 +45,9 @@ def transform_camera_to_base(coordinate_pixel_to_camera):
     # TODO: "Need to be modified"
 
     H = np.eye(4)  # 4x4单位矩阵 H为基坐标系到相机坐标系的转化
-    H[0, 3] = -0.07
+    H[0, 3] = 0.07
     H[1, 3] = 0
-    H[2, 3] = -0.05 - 0.0045 # radius + margin
+    H[2, 3] = 0.05 + 0.0045 # radius + margin
     
     res = np.linalg.inv(H) @ coordinate_pixel_to_camera
 
@@ -78,10 +55,10 @@ def transform_camera_to_base(coordinate_pixel_to_camera):
 
 def inverse_kinematics(xx, yy, zz):
     """计算 PX150 机械臂的逆运动学解"""
-    L1 = 0.10457  # 底座高度 upper_arm height
-    L2 = 0.158    # 肩关节到肘关节 
-    L3 = 0.15     # 肘关节到腕关节 length from wrist to forearm
-    L4 = 0.158575 # 腕关节到末端执行器 length from ee_gripper to wrist
+    L1 = 0.10457  # 底座高度
+    L2 = 0.158    # 肩关节到肘关节
+    L3 = 0.15     # 肘关节到腕关节
+    L4 = 0.158575 # 腕关节到末端执行器
 
     x, y, z = xx, yy, zz
     theta1 = np.arctan2(y, x)  # 计算底座角度
@@ -99,7 +76,7 @@ def inverse_kinematics(xx, yy, zz):
     
     return np.array([theta1, theta2, theta3, theta4, theta5])
 
-class ServerOfPerceptionAndGrasp(Node):
+class TEST_ServerOfPerceptionAndGrasp(Node):
     def __init__(self,name):
         super().__init__(name)
         self.srv = self.create_service(ObjectGrab, 'object_grab_service', self.callback) #TODO message type needed to be confirmed
@@ -162,9 +139,6 @@ class ServerOfPerceptionAndGrasp(Node):
         x = base_coordinate[0]
         y = base_coordinate[1]
         z = base_coordinate[2] 
-
-        base_coordinate_to_jionts_position = inverse_kinematics(x, y, z)
-
         self.get_logger().info(f"Transformed coordinates: x: {x}, y: {y}, z: {z}")
 
         detected = request.object.detected
@@ -172,14 +146,14 @@ class ServerOfPerceptionAndGrasp(Node):
         self.get_logger().info(f"Passing YOLO coordinates: x: {x}, y: {y}, z: {z}")
 
         if detected:
-            self.perception_and_grasp(base_coordinate_to_jionts_position)
-            response.success = True
+            with open("transform.csv", "a") as f:
+                f.write(f"{x},{y},{z}\n")
         else:
             response.success = False
 
         return response
         
-    def perception_and_grasp(self,jionts_position):
+    def perception_and_grasp(self,x, y, z):
         """
         TODO:
         The parameters of positions needed to be repalced by measuring in real world
@@ -188,10 +162,12 @@ class ServerOfPerceptionAndGrasp(Node):
         #     x, y, z = cluster['position']
         try:
             self.bot.gripper.release()
+            jiont_position = inverse_kinematics(x, y, z)
+            self.bot.arm.set_joint_positions(jiont_position)
+
             # self.bot.arm.set_ee_pose_components(x=x, y=y, z=z + 0.05, roll = -3.14)
             # self.bot.arm.set_ee_pose_components(x=x, y=y, z=z, roll = -3.14)
-            if(self.bot.arm.set_joint_positions(jionts_position)):
-                
+            if(self.bot.arm.set_joint_positions(jiont_position)):
                 self.bot.gripper.grasp()
                 self.bot.arm.set_ee_pose_components(x=0.15,y = 0, z=0.16) # sleep pose
                 self.bot.gripper.release()
@@ -202,20 +178,9 @@ class ServerOfPerceptionAndGrasp(Node):
         except Exception as e:
             self.get_logger().error(f"grasp fail: {str(e)}")
             return False
-        #     print(x, y, z)
-        #     self.bot.arm.set_ee_pose_components(x=x, y=y, z=z+0.05, pitch=0.5)
-        #     self.bot.arm.set_ee_pose_components(x=x, y=y, z=z, pitch=0.5)
-        #     self.bot.gripper.grasp()
-        #     self.bot.arm.set_ee_pose_components(x=x, y=y, z=z+0.05, pitch=0.5)
-        #     self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
-        #     self.bot.gripper.release()
-
-        # self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
-        # self.bot.arm.go_to_sleep_pose()
-
 def main(args = None):
     rclpy.init(args=args)
-    node = ServerOfPerceptionAndGrasp('ServerOfPerceptionAndGrasp')
+    node = TEST_ServerOfPerceptionAndGrasp('TEST_ServerOfPerceptionAndGrasp')
     rclpy.spin(node)
     robot_shutdown(node.global_node)
     Node.destroy_node()

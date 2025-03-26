@@ -17,7 +17,7 @@ setup(
     maintainer_email='yuliang.li-3@postgrad.manchester.ac.uk',
     description='TODO: Package description',
     license='TODO: License declaration',
-    tests_require=['pytest'],
+    #tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'collect_data = object_detection.collect_data:main',

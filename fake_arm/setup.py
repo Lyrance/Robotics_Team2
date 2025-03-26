@@ -17,7 +17,7 @@ setup(
     maintainer_email='mscrobotics2425laptop3@todo.todo',
     description='TODO: Package description',
     license='TODO: License declaration',
-    tests_require=['pytest'],
+    #tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'fake = fake_arm.fake:main',

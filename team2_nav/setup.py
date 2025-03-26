@@ -26,7 +26,7 @@ setup(
     maintainer_email='lyrance@outlook.com',
     description='TODO: Package description',
     license='TODO: License declaration',
-    tests_require=['pytest'],
+    #tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'explorer = team2_nav.explorer:main',
