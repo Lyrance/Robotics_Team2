@@ -53,7 +53,7 @@ class ExplorerNode(Node):
     # ------------------- 通过 TF 获取机器人位置 -------------------
     def update_robot_position(self):
         """
-        每隔 1 秒执行一次：尝试获取 'map' -> 'base_link' 的 TF，更新机器人在栅格中的坐标 (row, col)。
+        每隔 1 秒执行一次：尝试获取 'map' -> 'base_footprint' 的 TF，更新机器人在栅格中的坐标 (row, col)。
         """
         if self.map_data is None:
             return  # 还没接收到地图，不做处理
@@ -64,11 +64,11 @@ class ExplorerNode(Node):
         origin_y   = self.map_data.info.origin.position.y
 
         try:
-            # 从 TF Buffer 中查询变换: map -> base_link
+            # 从 TF Buffer 中查询变换: map -> base_footprint
             now = rclpy.time.Time()
             transform = self.tf_buffer.lookup_transform(
                 'map',               # source frame
-                'base_link',         # target frame（具体请根据真实机器人改成 base_footprint 等）
+                'base_footprint',         # target frame
                 now, 
                 timeout=rclpy.duration.Duration(seconds=0.5)
             )
@@ -87,7 +87,7 @@ class ExplorerNode(Node):
 
         except Exception as e:
             # 如果超时没获取到变换，或者其他错误
-            self.get_logger().warning(f"Failed to get TF map->base_link: {e}")
+            self.get_logger().warning(f"Failed to get TF map->base_footprint: {e}")
 
     # ------------------- 地图回调 -------------------
     def map_callback(self, msg):
