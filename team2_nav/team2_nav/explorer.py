@@ -362,6 +362,7 @@ class ExplorerNode(Node):
         # 如果 z < 0.2，就认为到达目标
         if z < 0.2:
             self.get_logger().info("Target is very close, stop.")
+            self.call_set_state("GRAB")
             return
 
         # 判断 x 偏差，决定旋转方向或直行
