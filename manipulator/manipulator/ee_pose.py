@@ -98,9 +98,6 @@ def main():
 
     #bot.arm.go_to_sleep_pose()# sleep pose joint positions: [0.0, -1.7688999531169733, 1.5249832864229877, 0.7793333450953166, 0.0010999999940395355]
 
-    # bot.arm.set_ee_pose_components(x=0.108, y=0.0650865, z=0.05515118)
-    # # bot.arm.set_ee_cartesian_trajectory(x=0.108, y=0.0650865, z=-0.05515118) # TODO: 要改为用逆运动学来控制
-    
     joint_positions = [0.    ,    0.43706908, 0.44541088, 0.68831637, 0.        ]
     # right answer:
     # [0.0, -0.029999999205271403, 0.025833332538604738, 0.013333333532015483, 0.0]

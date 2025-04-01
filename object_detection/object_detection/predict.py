@@ -46,7 +46,7 @@ class ImageDepthSubscriber(Node):
         self.latest_detected_object = {'x': 0.0, 'y': 0.0, 'z': 0.0, 'detected': False}
 
         self.in_progress = False  # 表示是否正在抓取
-        self.current_state = "INITIATE"  # 默认为 INITIATE
+        self.current_state = "GRAB"  # 默认为 INITIATE
 
     def status_callback(self, msg: String):
         """
@@ -138,7 +138,8 @@ class ImageDepthSubscriber(Node):
          4) 当前状态是 GRAB
         """
         dist = self.latest_detected_object['z']
-        if (self.current_state == "GRAB" and self.latest_detected_object['detected'] and dist>0.2 and dist<0.3 and not self.in_progress):
+        # 
+        if(self.in_progress == False):
             self.get_logger().info(f"Distance <0.3m => sending service request: {self.latest_detected_object}")
             self.in_progress = True
             self.call_service()
@@ -165,12 +166,14 @@ class ImageDepthSubscriber(Node):
             response = future.result()
             if response.success:
                 self.get_logger().info('Grab success -> setting in_progress = False')
+                
             else:
                 self.get_logger().info('Grab fail -> setting in_progress = False')
+                self.in_progress = False
         except Exception as e:
             self.get_logger().error(f'Service call failed: {str(e)}')
         # 无论成功或失败，都可以再次发送
-        self.in_progress = False
+        #self.in_progress = False
 
 def main(args=None):
     rclpy.init(args=args)

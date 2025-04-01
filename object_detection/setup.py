@@ -25,6 +25,8 @@ setup(
             'test = object_detection.test:main',
             'color_predict = object_detection.color_predict:main',
             'find_range = object_detection.find_range:main',
+
+            'predict_by_mask = object_detection.predict_by_mask:main',
         ],
     },
 )

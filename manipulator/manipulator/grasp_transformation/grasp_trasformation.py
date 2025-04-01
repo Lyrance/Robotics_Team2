@@ -34,7 +34,7 @@ def transform_camera_to_base(coordinate_pixel_to_camera):
 
     H = np.eye(4)  # 4x4单位矩阵 H为基坐标系到相机坐标系的转化
     H[0, 3] = -0.07
-    H[1, 3] = 0
+    H[1, 3] = -0.075
     H[2, 3] = -0.05 - 0.0045 # radius + margin
     
     res = np.linalg.inv(H) @ coordinate_pixel_to_camera

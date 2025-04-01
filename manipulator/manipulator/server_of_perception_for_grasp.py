@@ -4,6 +4,10 @@ ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:=px150
 ros2 run manipulator ServerOfPerceptionAndGrasp
 """
 
+# 1. 数据过滤
+# 2. transfromation调整
+# 3. 逆运动学和ee_pose哪个成功执行哪个
+
 import rclpy
 from rclpy.node import Node
 from numpy import pi
@@ -21,18 +25,6 @@ from interbotix_xs_modules.xs_robot.arm import InterbotixManipulatorXS
 
 import numpy as np
 from math import cos, sin, pi
-
-"""
-This script makes the end-effector go to a specific pose by defining the pose components
-
-To get started, open a terminal and type:
-
-    ros2 launch interbotix_xsarm_control xsarm_control.launch.py robot_model:=px150
-
-Then change to this directory and type:
-
-    python3 ee_pose.py
-"""
 import cv2
 import numpy as np  
 
@@ -68,8 +60,8 @@ def transform_camera_to_base(coordinate_pixel_to_camera):
     # TODO: "Need to be modified"
 
     H = np.eye(4)  # 4x4单位矩阵 H为基坐标系到相机坐标系的转化
-    H[0, 3] = -0.07
-    H[1, 3] = 0
+    H[0, 3] = -0.00 # TODO chage for testing, right value is -0.07
+    H[1, 3] = -0.095
     H[2, 3] = -0.05 - 0.0045 # radius + margin
     
     res = np.linalg.inv(H) @ coordinate_pixel_to_camera
@@ -121,16 +113,7 @@ class ServerOfPerceptionAndGrasp(Node):
             robot_name=self.ROBOT_NAME,
             node=self.global_node,
         )
-        # self.pcl = InterbotixPointCloudInterface(
-        #     node_inf=self.global_node,
-        # )
-        # armtag = InterbotixArmTagInterface(
-        #     ref_frame=self.REF_FRAME,
-        #     arm_tag_frame=self.ARM_TAG_FRAME,
-        #     arm_base_frame=self.ARM_BASE_FRAME,
-        #     node_inf=self.global_node,
-        # )
-
+        
         # Start up the API
         robot_startup(self.global_node)
 
@@ -154,7 +137,9 @@ class ServerOfPerceptionAndGrasp(Node):
         x = request.object.x
         y = request.object.y
         z = request.object.z
-        self.get_logger().info(f"Receiving YOLO coordinates: x: {x}, y: {y}, z: {z}")
+        angle = request.object.angle
+        angle = np.deg2rad(angle)
+        self.get_logger().info(f"Receiving YOLO coordinates: x: {x}, y: {y}, z: {z}, angle: {angle}")
         # pixel to camera
         coordinate_pixel_to_camera = transform_pixel_to_camera(x, y, z,color_intr)
         base_coordinate = transform_camera_to_base(coordinate_pixel_to_camera)
@@ -165,15 +150,16 @@ class ServerOfPerceptionAndGrasp(Node):
 
         base_coordinate_to_jionts_position = inverse_kinematics(x, y, z)
 
+        base_coordinate_to_jionts_position[4] = angle # 根据物体角度调整抓取位姿
+
         self.get_logger().info(f"Transformed coordinates: x: {x}, y: {y}, z: {z}")
 
         detected = request.object.detected
 
         self.get_logger().info(f"Passing YOLO coordinates: x: {x}, y: {y}, z: {z}")
-
-        if detected:
-            self.perception_and_grasp(base_coordinate_to_jionts_position)
-            response.success = True
+        if detected and x > 0.1:
+            if(self.perception_and_grasp(base_coordinate_to_jionts_position)):
+                response.success = False # 改为false用作测试，就不会只抓一次 TODO 正常使用要改为True
         else:
             response.success = False
 
@@ -184,34 +170,26 @@ class ServerOfPerceptionAndGrasp(Node):
         TODO:
         The parameters of positions needed to be repalced by measuring in real world
         """
-        # for cluster in clusters:
-        #     x, y, z = cluster['position']
+
         try:
             self.bot.gripper.release()
-            # self.bot.arm.set_ee_pose_components(x=x, y=y, z=z + 0.05, roll = -3.14)
-            # self.bot.arm.set_ee_pose_components(x=x, y=y, z=z, roll = -3.14)
             if(self.bot.arm.set_joint_positions(jionts_position)):
-                
                 self.bot.gripper.grasp()
-                self.bot.arm.set_ee_pose_components(x=0.15,y = 0, z=0.16) # sleep pose
-                self.bot.gripper.release()
+                self.get_logger().info("grasp success")
 
-            self.get_logger().info("grasp success")
-            return True
+                self.bot.arm.set_ee_pose_components(x=0.15,y = 0, z=0.16,moving_time=1.5) # FOR TEST TODO delete
+                self.bot.gripper.release() # FOR TEST TODO delete
+
+                return True
+            
+            else:
+                self.get_logger().info("grasp fail")
+                return False
+            
 
         except Exception as e:
             self.get_logger().error(f"grasp fail: {str(e)}")
             return False
-        #     print(x, y, z)
-        #     self.bot.arm.set_ee_pose_components(x=x, y=y, z=z+0.05, pitch=0.5)
-        #     self.bot.arm.set_ee_pose_components(x=x, y=y, z=z, pitch=0.5)
-        #     self.bot.gripper.grasp()
-        #     self.bot.arm.set_ee_pose_components(x=x, y=y, z=z+0.05, pitch=0.5)
-        #     self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
-        #     self.bot.gripper.release()
-
-        # self.bot.arm.set_ee_pose_components(x=0.3, z=0.2)
-        # self.bot.arm.go_to_sleep_pose()
 
 def main(args = None):
     rclpy.init(args=args)
