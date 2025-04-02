@@ -48,7 +48,7 @@ class ColorPredictNode(Node):
         self.get_logger().info(f"[ColorPredictNode] Current State: {self.current_state}")
 
         # 如果回到 INITIATE, 解锁颜色
-        if self.current_state == "INITIATE":
+        if self.current_state == "EXPLORE":
             self.locked_color = None
             self.locked_object = (0.0,0.0,0.0,False,None)
             self.get_logger().info("Reset locked_color to None")
@@ -58,11 +58,11 @@ class ColorPredictNode(Node):
         self.depth_image = self.cv_bridge.imgmsg_to_cv2(msg, '16UC1')
 
     def callback_color(self, msg: Image):
-        """当前状态在 [INITIATE, EXPLORE, NAV, GRAB, RELEASE, FOUND] 时执行检测"""
+        """当前状态在 [INITIATE, EXPLORE, GRAB, RELEASE, FOUND] 时执行检测"""
         if self.depth_image is None:
             return
 
-        if self.current_state in ["INITIATE","EXPLORE","NAV","GRAB","RELEASE","FOUND"]:
+        if self.current_state in ["INITIATE","EXPLORE","GRAB","RELEASE","FOUND"]:
             color_image = self.cv_bridge.imgmsg_to_cv2(msg, 'bgr8')
             self.detect_nearest_color(color_image)
 
@@ -145,7 +145,7 @@ class ColorPredictNode(Node):
 
     def state_switch_logic(self):
         """
-        示例: INITIATE->EXPLORE, EXPLORE->FOUND
+        示例: EXPLORE->FOUND, FOUND->GRAB
         """
         px_x, px_y, dist_m, detected, c = self.locked_object
 
@@ -155,10 +155,10 @@ class ColorPredictNode(Node):
                 if self.current_state != "EXPLORE":
                     self.call_set_state("FOUND")
 
-        elif self.current_state == "NAV":
+        elif self.current_state == "FOUND":
             # 如果距离 <0.3 => FOUND
-            if detected and dist_m<0.3 and dist_m>0.2:
-                if self.current_state != "NAV":
+            if detected and dist_m<0.25 and dist_m>0.18:
+                if self.current_state != "FOUND":
                     self.call_set_state("GRAB")
 
         # 根据需求可再添加 NAV->GRAB等
@@ -198,6 +198,7 @@ class ColorPredictNode(Node):
         msg.x = px_x     # 像素坐标 X
         msg.y = px_y     # 像素坐标 Y
         msg.z = dist_m   # 距离(米)
+        msg.angle = 0.0  # 角度
         msg.detected = detected
 
         self.get_logger().info(f"Publish locked_color={self.locked_color}: px={msg.x:.1f},py={msg.y:.1f}, z={msg.z:.2f}, det={msg.detected}")
@@ -215,5 +216,5 @@ def main(args=None):
         rclpy.shutdown()
         cv2.destroyAllWindows()
 
-if __name__=="__main__":
+if __name__=="__main__": 
     main()

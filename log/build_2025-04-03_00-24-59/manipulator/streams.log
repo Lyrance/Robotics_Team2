@@ -1,0 +1,22 @@
+[0.751s] Invoking command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/manipulator': AMENT_PREFIX_PATH=/home/mscrobotics2425laptop3/Robotics_Team2/install/package_with_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mscrobotics2425laptop3/Robotics_Team2/install/package_with_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/mscrobotics2425laptop3/Robotics_Team2/install/package_with_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/python3.10/site-packages:/home/mscrobotics2425laptop3/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/manipulator build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/install.log --single-version-externally-managed install_data
+[0.887s] running egg_info
+[0.888s] writing ../../build/manipulator/manipulator.egg-info/PKG-INFO
+[0.888s] writing dependency_links to ../../build/manipulator/manipulator.egg-info/dependency_links.txt
+[0.888s] writing entry points to ../../build/manipulator/manipulator.egg-info/entry_points.txt
+[0.888s] writing requirements to ../../build/manipulator/manipulator.egg-info/requires.txt
+[0.888s] writing top-level names to ../../build/manipulator/manipulator.egg-info/top_level.txt
+[0.890s] reading manifest file '../../build/manipulator/manipulator.egg-info/SOURCES.txt'
+[0.891s] writing manifest file '../../build/manipulator/manipulator.egg-info/SOURCES.txt'
+[0.891s] running build
+[0.891s] running build_py
+[0.892s] running install
+[0.892s] running install_lib
+[0.893s] running install_data
+[0.893s] running install_egg_info
+[0.894s] removing '/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/python3.10/site-packages/manipulator-0.0.0-py3.10.egg-info' (and everything under it)
+[0.895s] Copying ../../build/manipulator/manipulator.egg-info to /home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/python3.10/site-packages/manipulator-0.0.0-py3.10.egg-info
+[0.896s] running install_scripts
+[0.918s] Installing ServerOfPerceptionAndGrasp script to /home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/manipulator
+[0.919s] Installing TEST_ServerOfPerceptionAndGrasp script to /home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/manipulator
+[0.919s] writing list of installed files to '/home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/install.log'
+[0.939s] Invoked command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/manipulator' returned '0': AMENT_PREFIX_PATH=/home/mscrobotics2425laptop3/Robotics_Team2/install/package_with_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mscrobotics2425laptop3/Robotics_Team2/install/package_with_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/mscrobotics2425laptop3/Robotics_Team2/install/package_with_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/manipulator/lib/python3.10/site-packages:/home/mscrobotics2425laptop3/Robotics_Team2/install/package_with_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/manipulator build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/manipulator/install.log --single-version-externally-managed install_data

@@ -1,0 +1,3 @@
+[console_scripts]
+switch_initiate_to_explore = start_node.start_node:main
+

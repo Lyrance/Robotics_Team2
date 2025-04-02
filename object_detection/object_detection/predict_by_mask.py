@@ -195,13 +195,13 @@ class ImageDepthSubscriber(Node):
         每0.5s检查是否要调用 /object_grab_service
         条件:
          1) latest_detected_object['detected'] == True
-         2) 距离 <0.3
+         2) 0.18 < 距离 <0.25
          3) 当前不在抓取中 (in_progress=False)
          4) 当前状态是 GRAB
         """
         dist = self.latest_detected_object['z']
         # 
-        if(self.in_progress == False):
+        if(self.in_progress == False and dist < 0.25 and dist >0.18 and self.current_state == "GRAB" and self.latest_detected_object['detected']):
             self.get_logger().info(f"Distance <0.3m => sending service request: {self.latest_detected_object}")
             self.in_progress = True
             self.call_service()

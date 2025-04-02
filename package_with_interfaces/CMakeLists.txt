@@ -19,6 +19,7 @@ set(interface_files
   
   # Services
   "srv/ObjectGrab.srv"
+  "srv/SetRoverState.srv"
 
 )
 

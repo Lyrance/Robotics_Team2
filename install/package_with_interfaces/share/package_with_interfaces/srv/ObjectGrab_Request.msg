@@ -1,0 +1,1 @@
+ObjectInformation object

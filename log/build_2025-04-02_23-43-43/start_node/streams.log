@@ -1,0 +1,37 @@
+[1.469s] Invoking command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/start_node': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_node build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/install.log --single-version-externally-managed install_data
+[1.755s] running egg_info
+[1.755s] creating ../../build/start_node/start_node.egg-info
+[1.755s] writing ../../build/start_node/start_node.egg-info/PKG-INFO
+[1.756s] writing dependency_links to ../../build/start_node/start_node.egg-info/dependency_links.txt
+[1.756s] writing entry points to ../../build/start_node/start_node.egg-info/entry_points.txt
+[1.756s] writing requirements to ../../build/start_node/start_node.egg-info/requires.txt
+[1.756s] writing top-level names to ../../build/start_node/start_node.egg-info/top_level.txt
+[1.756s] writing manifest file '../../build/start_node/start_node.egg-info/SOURCES.txt'
+[1.759s] reading manifest file '../../build/start_node/start_node.egg-info/SOURCES.txt'
+[1.759s] writing manifest file '../../build/start_node/start_node.egg-info/SOURCES.txt'
+[1.759s] running build
+[1.759s] running build_py
+[1.759s] creating /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/build
+[1.759s] creating /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/build/lib
+[1.760s] creating /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/build/lib/start_node
+[1.760s] copying start_node/__init__.py -> /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/build/lib/start_node
+[1.760s] copying start_node/start_node.py -> /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/build/lib/start_node
+[1.760s] running install
+[1.760s] running install_lib
+[1.761s] creating /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/lib/python3.10/site-packages/start_node
+[1.761s] copying /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/build/lib/start_node/__init__.py -> /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/lib/python3.10/site-packages/start_node
+[1.761s] copying /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/build/lib/start_node/start_node.py -> /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/lib/python3.10/site-packages/start_node
+[1.761s] byte-compiling /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/lib/python3.10/site-packages/start_node/__init__.py to __init__.cpython-310.pyc
+[1.761s] byte-compiling /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/lib/python3.10/site-packages/start_node/start_node.py to start_node.cpython-310.pyc
+[1.762s] running install_data
+[1.762s] creating /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/share/ament_index
+[1.762s] creating /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/share/ament_index/resource_index
+[1.762s] creating /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/share/ament_index/resource_index/packages
+[1.762s] copying resource/start_node -> /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/share/ament_index/resource_index/packages
+[1.762s] copying package.xml -> /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/share/start_node
+[1.762s] running install_egg_info
+[1.764s] Copying ../../build/start_node/start_node.egg-info to /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/lib/python3.10/site-packages/start_node-0.0.0-py3.10.egg-info
+[1.764s] running install_scripts
+[1.784s] Installing switch_initiate_to_explore script to /home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/lib/start_node
+[1.784s] writing list of installed files to '/home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/install.log'
+[1.842s] Invoked command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/start_node' returned '0': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/start_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/start_node build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/start_node/install.log --single-version-externally-managed install_data

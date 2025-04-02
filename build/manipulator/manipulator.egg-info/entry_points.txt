@@ -1,0 +1,4 @@
+[console_scripts]
+ServerOfPerceptionAndGrasp = manipulator.server_of_perception_for_grasp:main
+TEST_ServerOfPerceptionAndGrasp = manipulator.pixel_to_base_verification:main
+

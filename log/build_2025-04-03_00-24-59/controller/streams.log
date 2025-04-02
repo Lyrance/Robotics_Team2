@@ -1,0 +1,21 @@
+[1.560s] Invoking command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/controller': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/controller build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/controller/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/controller/install.log --single-version-externally-managed install_data
+[1.846s] running egg_info
+[1.846s] writing ../../build/controller/controller.egg-info/PKG-INFO
+[1.847s] writing dependency_links to ../../build/controller/controller.egg-info/dependency_links.txt
+[1.848s] writing entry points to ../../build/controller/controller.egg-info/entry_points.txt
+[1.848s] writing requirements to ../../build/controller/controller.egg-info/requires.txt
+[1.848s] writing top-level names to ../../build/controller/controller.egg-info/top_level.txt
+[1.851s] reading manifest file '../../build/controller/controller.egg-info/SOURCES.txt'
+[1.852s] writing manifest file '../../build/controller/controller.egg-info/SOURCES.txt'
+[1.852s] running build
+[1.852s] running build_py
+[1.854s] running install
+[1.854s] running install_lib
+[1.857s] running install_data
+[1.857s] running install_egg_info
+[1.860s] removing '/home/mscrobotics2425laptop3/Robotics_Team2/install/controller/lib/python3.10/site-packages/controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.860s] Copying ../../build/controller/controller.egg-info to /home/mscrobotics2425laptop3/Robotics_Team2/install/controller/lib/python3.10/site-packages/controller-0.0.0-py3.10.egg-info
+[1.862s] running install_scripts
+[1.882s] Installing controller script to /home/mscrobotics2425laptop3/Robotics_Team2/install/controller/lib/controller
+[1.882s] writing list of installed files to '/home/mscrobotics2425laptop3/Robotics_Team2/build/controller/install.log'
+[1.910s] Invoked command in '/home/mscrobotics2425laptop3/Robotics_Team2/src/controller' returned '0': PYTHONPATH=/home/mscrobotics2425laptop3/Robotics_Team2/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop3/Robotics_Team2/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/controller build --build-base /home/mscrobotics2425laptop3/Robotics_Team2/build/controller/build install --record /home/mscrobotics2425laptop3/Robotics_Team2/build/controller/install.log --single-version-externally-managed install_data
