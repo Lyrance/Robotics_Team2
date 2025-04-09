@@ -22,6 +22,8 @@ setup(
         'console_scripts': [
             'ServerOfPerceptionAndGrasp = manipulator.server_of_perception_for_grasp:main',
             'TEST_ServerOfPerceptionAndGrasp = manipulator.pixel_to_base_verification:main',
+            'demo_manipulator_with_color_check = manipulator.demo:main',
+            'ServerOfPerceptionAndGrasp_status = manipulator.status_trans:main'
         ],
     },
 )

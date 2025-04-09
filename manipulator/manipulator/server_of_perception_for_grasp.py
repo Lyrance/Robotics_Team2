@@ -60,12 +60,16 @@ def transform_camera_to_base(coordinate_pixel_to_camera):
     # TODO: "Need to be modified"
 
     H = np.eye(4)  # 4x4单位矩阵 H为基坐标系到相机坐标系的转化
-    H[0, 3] = -0.00 # TODO chage for testing, right value is -0.07
-    H[1, 3] = -0.095
-    H[2, 3] = -0.05 - 0.0045 # radius + margin
+    H[0, 3] = 0.03 # TODO chage for testing, right value is -0.07
+    H[1, 3] =  0.147
+    H[2, 3] =  0.05 # radius + margin
     
-    res = np.linalg.inv(H) @ coordinate_pixel_to_camera
+    #H = np.array([[ 0.076519, -0.996796 ,-0.023283 , 0.081215],[-0.026184  ,0.021334 ,-0.999429 , 0.026931], [ 0.996724,  0.077085, -0.024467, -0.02966 ],[ 0.      ,  0. ,       0.      ,  1.      ]])
 
+
+    res = H @ coordinate_pixel_to_camera
+
+    
     return res # 基坐标系下的坐标
 
 def inverse_kinematics(xx, yy, zz):
@@ -157,8 +161,9 @@ class ServerOfPerceptionAndGrasp(Node):
         detected = request.object.detected
 
         self.get_logger().info(f"Passing YOLO coordinates: x: {x}, y: {y}, z: {z}")
-        if detected and x > 0.1:
+        if detected and (x > 0.1):
             if(self.perception_and_grasp(base_coordinate_to_jionts_position)):
+                #self.bot.arm.go_to_home_pose()
                 response.success = False # 改为false用作测试，就不会只抓一次 TODO 正常使用要改为True
         else:
             response.success = False
@@ -178,7 +183,7 @@ class ServerOfPerceptionAndGrasp(Node):
                 self.get_logger().info("grasp success")
 
                 self.bot.arm.set_ee_pose_components(x=0.15,y = 0, z=0.16,moving_time=1.5) # FOR TEST TODO delete
-                self.bot.gripper.release() # FOR TEST TODO delete
+                #self.bot.gripper.release() # FOR TEST TODO delete
 
                 return True
             

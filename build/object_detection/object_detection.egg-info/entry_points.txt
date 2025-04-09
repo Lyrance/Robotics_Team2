@@ -1,8 +1,0 @@
-[console_scripts]
-collect_data = object_detection.collect_data:main
-color_predict = object_detection.color_predict:main
-find_range = object_detection.find_range:main
-predict = object_detection.predict:main
-predict_by_mask = object_detection.predict_by_mask:main
-test = object_detection.test:main
-test_status = object_detection.test_status:main
