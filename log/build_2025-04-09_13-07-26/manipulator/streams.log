@@ -1,0 +1,71 @@
+[1.909s] Invoking command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/manipulator': AMENT_PREFIX_PATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/install/package_with_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/install/package_with_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/install/package_with_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages:/home/mscrobotics2425laptop16/Robotics_Team2/src/install/package_with_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/manipulator build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/install.log --single-version-externally-managed install_data
+[2.521s] running egg_info
+[2.571s] creating ../build/manipulator/manipulator.egg-info
+[2.571s] writing ../build/manipulator/manipulator.egg-info/PKG-INFO
+[2.573s] writing dependency_links to ../build/manipulator/manipulator.egg-info/dependency_links.txt
+[2.573s] writing entry points to ../build/manipulator/manipulator.egg-info/entry_points.txt
+[2.574s] writing requirements to ../build/manipulator/manipulator.egg-info/requires.txt
+[2.574s] writing top-level names to ../build/manipulator/manipulator.egg-info/top_level.txt
+[2.575s] writing manifest file '../build/manipulator/manipulator.egg-info/SOURCES.txt'
+[2.662s] reading manifest file '../build/manipulator/manipulator.egg-info/SOURCES.txt'
+[2.665s] writing manifest file '../build/manipulator/manipulator.egg-info/SOURCES.txt'
+[2.666s] running build
+[2.666s] running build_py
+[2.666s] creating /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator
+[2.666s] copying manipulator/server_of_perception_for_grasp.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator
+[2.667s] copying manipulator/status_trans.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator
+[2.667s] copying manipulator/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator
+[2.668s] copying manipulator/vertical_grasp.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator
+[2.673s] copying manipulator/demo.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator
+[2.673s] copying manipulator/pixel_to_base_verification.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator
+[2.673s] copying manipulator/ee_pose.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator
+[2.673s] creating /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation
+[2.674s] copying manipulator/grasp_transformation/get_camera_infr.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation
+[2.674s] copying manipulator/grasp_transformation/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation
+[2.674s] copying manipulator/grasp_transformation/test_inverse.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation
+[2.675s] copying manipulator/grasp_transformation/inverse_kinematics.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation
+[2.675s] copying manipulator/grasp_transformation/grasp_trasformation.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation
+[2.679s] copying manipulator/grasp_transformation/H_by_four.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation
+[2.680s] running install
+[2.693s] running install_lib
+[2.752s] creating /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator
+[2.753s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/server_of_perception_for_grasp.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator
+[2.754s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/status_trans.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator
+[2.755s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator
+[2.756s] creating /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation
+[2.756s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation/get_camera_infr.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation
+[2.756s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation
+[2.757s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation/test_inverse.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation
+[2.757s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation/inverse_kinematics.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation
+[2.758s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation/grasp_trasformation.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation
+[2.758s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/grasp_transformation/H_by_four.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation
+[2.759s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/vertical_grasp.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator
+[2.759s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/demo.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator
+[2.759s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/pixel_to_base_verification.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator
+[2.760s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build/lib/manipulator/ee_pose.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator
+[2.762s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/server_of_perception_for_grasp.py to server_of_perception_for_grasp.cpython-310.pyc
+[2.768s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/status_trans.py to status_trans.cpython-310.pyc
+[2.773s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/__init__.py to __init__.cpython-310.pyc
+[2.774s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation/get_camera_infr.py to get_camera_infr.cpython-310.pyc
+[2.776s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation/__init__.py to __init__.cpython-310.pyc
+[2.777s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation/test_inverse.py to test_inverse.cpython-310.pyc
+[2.778s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation/inverse_kinematics.py to inverse_kinematics.cpython-310.pyc
+[2.780s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation/grasp_trasformation.py to grasp_trasformation.cpython-310.pyc
+[2.781s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/grasp_transformation/H_by_four.py to H_by_four.cpython-310.pyc
+[2.782s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/vertical_grasp.py to vertical_grasp.cpython-310.pyc
+[2.784s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/demo.py to demo.cpython-310.pyc
+[2.793s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/pixel_to_base_verification.py to pixel_to_base_verification.cpython-310.pyc
+[2.794s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator/ee_pose.py to ee_pose.cpython-310.pyc
+[2.795s] running install_data
+[2.796s] creating /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/share/ament_index/resource_index/packages
+[2.798s] copying resource/manipulator -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/share/ament_index/resource_index/packages
+[2.798s] copying package.xml -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/share/manipulator
+[2.799s] running install_egg_info
+[2.890s] Copying ../build/manipulator/manipulator.egg-info to /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages/manipulator-0.0.0-py3.10.egg-info
+[2.892s] running install_scripts
+[3.326s] Installing ServerOfPerceptionAndGrasp script to /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/manipulator
+[3.326s] Installing TEST_ServerOfPerceptionAndGrasp script to /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/manipulator
+[3.327s] Installing demo_manipulator_with_color_check script to /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/manipulator
+[3.327s] Installing status_trans script to /home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/manipulator
+[3.329s] writing list of installed files to '/home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/install.log'
+[3.410s] Invoked command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/manipulator' returned '0': AMENT_PREFIX_PATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/install/package_with_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/install/package_with_interfaces:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/install/package_with_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/src/install/manipulator/lib/python3.10/site-packages:/home/mscrobotics2425laptop16/Robotics_Team2/src/install/package_with_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/manipulator build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/src/build/manipulator/install.log --single-version-externally-managed install_data

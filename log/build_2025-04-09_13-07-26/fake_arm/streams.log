@@ -1,0 +1,33 @@
+[6.631s] Invoking command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/fake_arm': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/fake_arm build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/install.log --single-version-externally-managed install_data
+[7.969s] running egg_info
+[8.077s] creating ../build/fake_arm/fake_arm.egg-info
+[8.077s] writing ../build/fake_arm/fake_arm.egg-info/PKG-INFO
+[8.082s] writing dependency_links to ../build/fake_arm/fake_arm.egg-info/dependency_links.txt
+[8.082s] writing entry points to ../build/fake_arm/fake_arm.egg-info/entry_points.txt
+[8.086s] writing requirements to ../build/fake_arm/fake_arm.egg-info/requires.txt
+[8.086s] writing top-level names to ../build/fake_arm/fake_arm.egg-info/top_level.txt
+[8.086s] writing manifest file '../build/fake_arm/fake_arm.egg-info/SOURCES.txt'
+[8.233s] reading manifest file '../build/fake_arm/fake_arm.egg-info/SOURCES.txt'
+[8.236s] writing manifest file '../build/fake_arm/fake_arm.egg-info/SOURCES.txt'
+[8.236s] running build
+[8.242s] running build_py
+[8.243s] creating /home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/build/lib/fake_arm
+[8.247s] copying fake_arm/fake.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/build/lib/fake_arm
+[8.247s] copying fake_arm/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/build/lib/fake_arm
+[8.247s] running install
+[8.273s] running install_lib
+[8.336s] creating /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/lib/python3.10/site-packages/fake_arm
+[8.337s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/build/lib/fake_arm/fake.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/lib/python3.10/site-packages/fake_arm
+[8.337s] copying /home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/build/lib/fake_arm/__init__.py -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/lib/python3.10/site-packages/fake_arm
+[8.340s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/lib/python3.10/site-packages/fake_arm/fake.py to fake.cpython-310.pyc
+[8.341s] byte-compiling /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/lib/python3.10/site-packages/fake_arm/__init__.py to __init__.cpython-310.pyc
+[8.341s] running install_data
+[8.341s] creating /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/share/ament_index/resource_index/packages
+[8.342s] copying resource/fake_arm -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/share/ament_index/resource_index/packages
+[8.343s] copying package.xml -> /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/share/fake_arm
+[8.343s] running install_egg_info
+[8.417s] Copying ../build/fake_arm/fake_arm.egg-info to /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/lib/python3.10/site-packages/fake_arm-0.0.0-py3.10.egg-info
+[8.420s] running install_scripts
+[9.099s] Installing fake script to /home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/lib/fake_arm
+[9.108s] writing list of installed files to '/home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/install.log'
+[9.252s] Invoked command in '/home/mscrobotics2425laptop16/Robotics_Team2/src/fake_arm' returned '0': PYTHONPATH=/home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mscrobotics2425laptop16/Robotics_Team2/src/install/fake_arm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/fake_arm build --build-base /home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/build install --record /home/mscrobotics2425laptop16/Robotics_Team2/src/build/fake_arm/install.log --single-version-externally-managed install_data

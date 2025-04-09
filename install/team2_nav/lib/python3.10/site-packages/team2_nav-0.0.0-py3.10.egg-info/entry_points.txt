@@ -1,0 +1,2 @@
+[console_scripts]
+explorer = team2_nav.explorer:main
