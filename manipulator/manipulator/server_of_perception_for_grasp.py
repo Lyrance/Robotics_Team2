@@ -148,9 +148,9 @@ class ServerOfPerceptionAndGrasp(Node):
         coordinate_pixel_to_camera = transform_pixel_to_camera(x, y, z,color_intr)
         base_coordinate = transform_camera_to_base(coordinate_pixel_to_camera)
 
-        x = base_coordinate[0] + 0.002
-        y = -base_coordinate[1] - 0.025
-        z = base_coordinate[2] + 0.008 
+        x = base_coordinate[0] + 0.0026
+        y = -base_coordinate[1] - 0.063
+        z = base_coordinate[2] - 0.020
 
         base_coordinate_to_jionts_position = inverse_kinematics(x, y, z)
 
@@ -182,7 +182,7 @@ class ServerOfPerceptionAndGrasp(Node):
                 self.bot.gripper.grasp()
                 self.get_logger().info("grasp success")
 
-                self.bot.arm.set_ee_pose_components(x=0.15,y = 0, z=0.16,moving_time=1.5) # FOR TEST TODO delete
+                self.bot.arm.set_ee_pose_components(x=0.15,y = 0, z=0.16,moving_time=3) # FOR TEST TODO delete
                 #self.bot.gripper.release() # FOR TEST TODO delete
 
                 return True

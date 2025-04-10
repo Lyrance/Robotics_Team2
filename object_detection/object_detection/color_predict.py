@@ -54,6 +54,16 @@ class ColorPredictNode(Node):
             self.get_logger().info("Reset locked_color to None")
 
     def callback_depth(self, msg: Image):
+        """Callback function for depth image subscription.
+        
+        Stores the depth image from ROS message into class member. The depth image is 
+        converted from ROS Image message to OpenCV format with 16-bit unsigned integer 
+        values representing depth in millimeters.
+        
+        Args:
+            msg (Image): ROS Image message containing depth data
+        
+        """
         """存储深度图 (uint16, 单位:mm)"""
         self.depth_image = self.cv_bridge.imgmsg_to_cv2(msg, '16UC1')
 

@@ -10,7 +10,7 @@ class RoverController(Node):
     def __init__(self, name="rover_controller"):
         super().__init__(name)
         # 当前状态初始化为 INITIATE
-        self.current_state = "INITIATE"
+        self.current_state = "EXPLORE"
 
         # 发布状态的话题
         self.state_pub = self.create_publisher(String, "/rover_status", 10)

@@ -2,6 +2,7 @@ import rclpy
 from rclpy.node import Node
 from numpy import pi
 from package_with_interfaces.srv import ObjectGrab
+from package_with_interfaces.msg import ObjectInformation  # 用于接收颜色检测消息
 
 from interbotix_common_modules.common_robot.robot import (
     create_interbotix_global_node,
@@ -30,7 +31,7 @@ depth_intr = {
     "fy": 431.85052490234375,
 }
 
-# 从像素坐标到相机坐标系转换（注意：这里对单位做了变换）
+# 从像素坐标到相机坐标系转换（对单位做变换）
 def transform_pixel_to_camera(x, y, z, color_intr):
     res = np.array([[x], [y], [z], [1]])
     distance = x  # 假设 x 表示距离（单位：m）
@@ -38,17 +39,26 @@ def transform_pixel_to_camera(x, y, z, color_intr):
     res[2] = (z - color_intr["ppy"]) * distance / color_intr["fy"]
     return res
 
-# 从相机坐标系到基坐标系转换（这里以简化的刚体变换方法实现）
+# 从相机坐标系到基坐标系转换
 def transform_camera_to_base(coordinate_pixel_to_camera):
-    H = np.eye(4)  # 4x4 单位矩阵，后续根据实际标定修改
-    H[0, 3] = 0.03   # TODO: 根据实际情况修改
-    H[1, 3] =  0.147
-    H[2, 3] =  0.05
-    res = np.linalg.inv(H) @ coordinate_pixel_to_camera
-    return res.flatten()  # 返回形状为 (4,) 的一维数组
+    # 取巧办法
+    # translation_dis_x = 0.15
+    # translation_dis_y = 0
+    # translation_dis_z = -0.05
+    # TODO: "Need to be modified"
+
+    H = np.eye(4)  # 4x4单位矩阵 H为基坐标系到相机坐标系的转化
+    H[0, 3] = -0.01 # TODO chage for testing, right value is -0.07
+    H[1, 3] =  0.011
+    H[2, 3] =  -0.05 # radius + margin
+    
+    #H = np.array([[ 0.076519, -0.996796 ,-0.023283 , 0.081215],[-0.026184  ,0.021334 ,-0.999429 , 0.026931], [ 0.996724,  0.077085, -0.024467, -0.02966 ],[ 0.      ,  0. ,       0.      ,  1.      ]])
 
 
-# 机械臂逆运动学（根据 PX150 机械臂的参数）
+    res = H @ coordinate_pixel_to_camera
+    return res.flatten()  # 返回一维数组
+
+# 机械臂逆运动学计算（根据 PX150 参数）
 def inverse_kinematics(xx, yy, zz):
     L1 = 0.10457  # 底座高度
     L2 = 0.158    # 肩关节到肘关节
@@ -69,6 +79,10 @@ class ServerOfPerceptionAndGrasp(Node):
         super().__init__(name)
         self.srv = self.create_service(ObjectGrab, 'object_grab_service', self.callback)
         
+        # 创建颜色检测订阅器，用于获取 /target_color 消息中的距离信息
+        self.create_subscription(ObjectInformation, '/target_color', self.color_info_callback, 10)
+        self.latest_target_distance = None  # 存储从颜色检测中获得的距离
+
         # 机械臂参数初始化
         self.ROBOT_MODEL = 'px150'
         self.ROBOT_NAME = self.ROBOT_MODEL
@@ -85,25 +99,30 @@ class ServerOfPerceptionAndGrasp(Node):
         )
         robot_startup(self.global_node)
 
-        # 设置初始姿态（sleep_pose）和打开夹爪（确保空闲状态）
+        # 设置初始姿态（sleep_pose）和打开夹爪
         self.bot.arm.set_ee_pose_components(x=0.15, y=0, z=0.16, moving_time=1.5)
         self.bot.gripper.release()
 
-        # 增加状态机变量，初始状态为抓取状态 "grab"
+        # 状态机初始状态为 “grab”
         self.current_state = "grab"
         self.get_logger().info("Initial state: grab")
+
+    def color_info_callback(self, msg: ObjectInformation):
+        # 假设 msg.z 表示从颜色检测得到的目标距离（单位：米）
+        self.latest_target_distance = msg.z
+        self.get_logger().info(f"Received target distance from color detection: {self.latest_target_distance:.2f} m")
 
     def callback(self, request, response):
         """
         根据当前状态执行不同操作：
-        - grab 状态：转换接收的像素坐标，并调用 grasp 操作，
-                      如果 grasp 成功则进入 return 状态，否则保持状态等待后续请求重试；
-        - return 状态：执行“回返”动作（移动到目标盒子前），成功后进入 release 状态；
-        - release 状态：执行释放操作（夹爪打开），并将状态切换到 explore；
-        - explore 状态：表示任务进行中，无需执行抓取；
+          - grab：执行抓取操作，如果成功则进入 return 状态；
+          - return：执行回返动作（移动到放置盒子前），状态切换到 release；
+          - release：获取颜色检测的距离信息，用该距离设置放置位姿，再执行释放，
+                     然后切换到 explore 状态；
+          - explore：当前状态下不执行抓取。
         """
         if self.current_state == "grab":
-            # --- 坐标转换及抓取目标判断 ---
+            # 坐标转换及抓取目标判断
             x = request.object.x
             y = request.object.y
             z = request.object.z
@@ -115,6 +134,11 @@ class ServerOfPerceptionAndGrasp(Node):
             coordinate_pixel_to_camera = transform_pixel_to_camera(x, y, z, color_intr)
             base_coordinate = transform_camera_to_base(coordinate_pixel_to_camera)
             new_x, new_y, new_z = base_coordinate[0], base_coordinate[1], base_coordinate[2]
+
+            new_x = base_coordinate[0] + 0.0026
+            new_y = -base_coordinate[1] - 0.063
+            new_z = base_coordinate[2] - 0.020
+
             joints_position = inverse_kinematics(new_x, new_y, new_z)
             joints_position[4] = angle_rad  # 根据物体角度调整抓取位姿
 
@@ -135,7 +159,7 @@ class ServerOfPerceptionAndGrasp(Node):
                 response.success = False
 
         elif self.current_state == "return":
-            # --- 回返动作，移动到放置目标盒子前 ---
+            # 执行回返动作
             if self.move_to_return_pose():
                 self.get_logger().info("Reached return pose. Entering release state...")
                 self.current_state = "release"
@@ -146,13 +170,20 @@ class ServerOfPerceptionAndGrasp(Node):
 
         elif self.current_state == "release":
             # --- 执行释放操作 ---
-            self.bot.gripper.release()
-            self.get_logger().info("Gripper released the object. Changing state to explore.")
-            self.current_state = "explore"
-            response.success = True
+            # 这里使用从 /target_color 接收到的距离信息
+            if self.latest_target_distance is None:
+                self.get_logger().warn("No target distance received from color detection. Cannot move to proper release pose.")
+                response.success = False
+            else:
+                dist = self.latest_target_distance  # 使用从颜色检测得到的距离作为目标 x 坐标
+                # 根据实际需求，你可能需要对 dist 进行校正或转换
+                self.bot.arm.set_ee_pose_components(x=dist, y=0.0, z=-0.05, moving_time=2.0)
+                self.bot.gripper.release()
+                self.get_logger().info("Gripper released the object. Changing state to explore.")
+                self.current_state = "explore"
+                response.success = True
 
         elif self.current_state == "explore":
-            # 在 explore 状态下，本服务端不执行抓取操作
             self.get_logger().info("Current state is explore. No grasp action executed.")
             response.success = False
 
@@ -163,21 +194,16 @@ class ServerOfPerceptionAndGrasp(Node):
 
     def perception_and_grasp(self, joints_position):
         """
-        在 "grab" 状态下尝试抓取操作：
-         1. 先打开夹爪（release）以备抓取；
+        在 "grab" 状态下尝试抓取：
+         1. 先打开夹爪；
          2. 移动机械臂至抓取位姿；
-         3. 执行抓取操作（grasp），抓取后不再释放，接着将机械臂移至 sleep_pose 保持夹持状态；
-         如果抓取失败则返回 False，等待后续重试。
+         3. 执行抓取（闭合夹爪），然后返回保持抓持状态的位姿。
         """
         try:
-            # 打开夹爪，确保无物体干扰
             self.bot.gripper.release()
-            # 移动至目标抓取位姿
             if self.bot.arm.set_joint_positions(joints_position):
-                # 执行抓取：闭合夹爪
                 self.bot.gripper.grasp()
                 self.get_logger().info("Grasp executed successfully.")
-                # 移动到 sleep_pose（保持抓持状态，不释放）
                 self.bot.arm.set_ee_pose_components(x=0.15, y=0, z=0.16, moving_time=1.5)
                 return True
             else:
@@ -189,13 +215,9 @@ class ServerOfPerceptionAndGrasp(Node):
 
     def move_to_return_pose(self):
         """
-        执行回返动作：
-         - 将机械臂移动到预定义的放置位姿（目标盒子正前方）；
-         - 此处模拟小车已行驶到位，实际使用时应结合底盘控制；
-         - 若移动成功返回 True，否则返回 False。
+        执行回返动作：将机械臂移动到预定义的放置位姿（目标盒子正前方）。
         """
         try:
-            # 此处定义放置物体时机械臂的目标位姿，数值需要根据实际标定调整。
             self.bot.arm.set_ee_pose_components(x=0.3, y=0, z=0.2, moving_time=2.0)
             self.get_logger().info("Moving to return pose (ready to place object)...")
             return True
