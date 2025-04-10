@@ -99,7 +99,7 @@ class ImageDepthSubscriber(Node):
                     mask_resized = cv2.resize(mask, (w, h), interpolation=cv2.INTER_NEAREST)
                     
                     if mask_resized.dtype == np.uint8 and len(mask_resized.shape) == 2:
-                        cv2.imshow("Resized Mask", mask_resized)
+                        #cv2.imshow("Resized Mask", mask_resized)
                         cv2.waitKey(1)
                 else:
                     mask_resized = np.zeros((h, w), dtype=np.uint8)
@@ -155,7 +155,7 @@ class ImageDepthSubscriber(Node):
             }
 
         # 显示结果（实际部署时可关闭）
-        cv2.imshow("YOLO Detection", color_image)
+        #cv2.imshow("YOLO Detection", color_image)
         cv2.waitKey(1)
 
     def compute_angle_with_mask(self, mask):

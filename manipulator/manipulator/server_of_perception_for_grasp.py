@@ -60,10 +60,10 @@ def transform_camera_to_base(coordinate_pixel_to_camera):
     # TODO: "Need to be modified"
 
     H = np.eye(4)  # 4x4单位矩阵 H为基坐标系到相机坐标系的转化
-    H[0, 3] = 0.03 # TODO chage for testing, right value is -0.07
-    H[1, 3] =  0.147
-    H[2, 3] =  0.05 # radius + margin
-    
+    H[0, 3] = 0.0 # TODO chage for testing, right value is -0.07
+    H[1, 3] =  0.08
+    H[2, 3] =  -0.04 # radius + margin
+    # 相机坐标系需要向下位移0.04m，不需要向前后位移，向右位移0.08m
     #H = np.array([[ 0.076519, -0.996796 ,-0.023283 , 0.081215],[-0.026184  ,0.021334 ,-0.999429 , 0.026931], [ 0.996724,  0.077085, -0.024467, -0.02966 ],[ 0.      ,  0. ,       0.      ,  1.      ]])
 
 
@@ -178,7 +178,7 @@ class ServerOfPerceptionAndGrasp(Node):
 
         try:
             self.bot.gripper.release()
-            if(self.bot.arm.set_joint_positions(jionts_position)):
+            if(self.bot.arm.set_joint_positions(jionts_position,moving_time=3)):
                 self.bot.gripper.grasp()
                 self.get_logger().info("grasp success")
 

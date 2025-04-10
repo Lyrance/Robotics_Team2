@@ -50,12 +50,16 @@ def transform_camera_to_base(coordinate_pixel_to_camera):
     # TODO: "Need to be modified"
 
     H = np.eye(4)  # 4x4单位矩阵 H为基坐标系到相机坐标系的转化
-    H[0, 3] = -0.07
-    H[1, 3] = 0
-    H[2, 3] = -0.05 - 0.0045 # radius + margin
+    H[0, 3] = 0.0 # TODO chage for testing, right value is -0.07
+    H[1, 3] =  0.08
+    H[2, 3] =  -0.04 # radius + margin
     
-    res = np.linalg.inv(H) @ coordinate_pixel_to_camera
+    #H = np.array([[ 0.076519, -0.996796 ,-0.023283 , 0.081215],[-0.026184  ,0.021334 ,-0.999429 , 0.026931], [ 0.996724,  0.077085, -0.024467, -0.02966 ],[ 0.      ,  0. ,       0.      ,  1.      ]])
 
+
+    res = H @ coordinate_pixel_to_camera
+
+    
     return res # 基坐标系下的坐标
 
 def inverse_kinematics(xx, yy, zz):
