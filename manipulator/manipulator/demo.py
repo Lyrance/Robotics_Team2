@@ -97,9 +97,9 @@ class DemoManipulatorWithColorCheck(Node):
         self.bot.arm.set_ee_pose_components(x=0.15, y=0, z=0.16, moving_time=1.5)
         self.bot.gripper.release()
 
-        # 状态机初始状态为 "grab"
-        self.current_state = "GRAB"
-        self.get_logger().info("Initial state: GRAB")
+        # 状态机初始状态为 "INITIATE"
+        self.current_state = "INITIATE"
+        self.get_logger().info("Initial state: INITIATE")
 
         self.state_client = self.create_client(SetRoverState, '/set_rover_state')
         while not self.state_client.wait_for_service(timeout_sec=1.0):
@@ -188,7 +188,6 @@ class DemoManipulatorWithColorCheck(Node):
                     self.object_color = self.detected_box_color
                     self.get_logger().info(f"Grasp succeeded. Object color locked as: {self.object_color}")
                     self.get_logger().info("Entering return state...")
-                    #self.current_state = "return"
                     self.call_set_state("RETURN")
                     response.success = True
                 else:
@@ -201,7 +200,7 @@ class DemoManipulatorWithColorCheck(Node):
             if self.move_to_return_pose():
                 self.get_logger().info("Reached return pose. Entering release state...")
                 #self.current_state = "release"
-                self.call_set_state("RELEASE")
+                #self.call_set_state("RELEASE")
                 response.success = True
             else:
                 self.get_logger().info("Failed to reach return pose. Retrying...")
@@ -218,7 +217,7 @@ class DemoManipulatorWithColorCheck(Node):
             elif self.detected_box_color.lower() == self.object_color.lower():
                 self.get_logger().info("Box color matches object color. Executing release.")
                 self.bot.gripper.release()
-                self.current_state = "explore"
+                self.call_set_state("EXPLORE")
                 response.success = True
             else:
                 self.get_logger().info(f"Box color ({self.detected_box_color}) DOES NOT match object color ({self.object_color}). Holding object.")
@@ -241,7 +240,7 @@ class DemoManipulatorWithColorCheck(Node):
                 self.get_logger().info("Grasp executed successfully.")
                 # 移回保持抓持状态的位姿
                 self.bot.arm.set_ee_pose_components(x=0.15, y=0, z=0.16, moving_time=1.5)
-                self.call_set_state("RETURN")
+                #self.call_set_state("RETURN")
                 return True
             else:
                 self.get_logger().info("Failed to move to grasp position.")

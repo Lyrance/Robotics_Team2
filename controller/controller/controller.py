@@ -4,7 +4,7 @@ from std_msgs.msg import String
 from package_with_interfaces.srv import SetRoverState
 
 # 定义所有状态
-ALL_STATES = ["INITIATE", "EXPLORE", "FOUND", "NAV", "GRAB", "RETURN", "RELEASE"]
+ALL_STATES = ["INITIATE", "EXPLORE", "FOUND", "GRAB", "RETURN", "RELEASE"]
 
 class RoverController(Node):
     def __init__(self, name="rover_controller"):
@@ -54,16 +54,15 @@ class RoverController(Node):
     def check_transition(self, old, new):
         """
         允许的跳转关系可自行定义。
-        下面示例：INITIATE -> EXPLORE -> FOUND -> NAV -> GRAB -> RETURN -> RELEASE -> INITIATE
+        下面示例：INITIATE -> EXPLORE -> FOUND -> GRAB -> RETURN -> RELEASE -> INITIATE
         """
         valid_transitions = {
             "INITIATE": ["EXPLORE"],
             "EXPLORE":  ["FOUND"],
-            "FOUND":    ["NAV"],
-            "NAV":      ["GRAB"],
+            "FOUND":    ["GRAB"],
             "GRAB":     ["RETURN"],
             "RETURN":   ["RELEASE"],
-            "RELEASE":  ["INITIATE"]
+            "RELEASE":  ["EXPLORE"]
         }
         return (new in valid_transitions.get(old, []))
 
