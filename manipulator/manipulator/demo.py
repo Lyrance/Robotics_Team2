@@ -142,6 +142,11 @@ class DemoManipulatorWithColorCheck(Node):
 
 
     def target_color_callback(self, msg: ObjectInformation):
+        # 保存像素和深度
+        self.box_px       = msg.x
+        self.box_py       = msg.y
+        self.box_dist     = msg.z
+        self.box_detected = msg.detected
         # 这里假设 msg 包含 color 字段，代表当前检测到的箱子颜色
         if hasattr(msg, 'color'):
             self.detected_box_color = msg.color
@@ -205,23 +210,58 @@ class DemoManipulatorWithColorCheck(Node):
             else:
                 self.get_logger().info("Failed to reach return pose. Retrying...")
                 response.success = False
-
         elif self.current_state == "RELEASE":
-            # 释放前先检查箱子颜色是否与物块颜色匹配
-            if self.object_color is None:
-                self.get_logger().warn("Object color not locked. Cannot verify box color. Holding object.")
+            # 如果还没锁定物块颜色，或者还没收到箱子信息，都先不放
+            if self.object_color is None or not self.box_detected:
+                self.get_logger().info("Waiting for locked object color or box detection...")
                 response.success = False
-            elif self.detected_box_color is None:
-                self.get_logger().warn("No box color detected. Holding object.")
-                response.success = False
-            elif self.detected_box_color.lower() == self.object_color.lower():
-                self.get_logger().info("Box color matches object color. Executing release.")
+                return response
+
+            # 只在检测到匹配颜色的箱子时放置
+            if self.detected_box_color.lower() == self.object_color.lower():
+                # 1) 像素→相机坐标→基坐标
+                cam_pt  = transform_pixel_to_camera(self.box_px, self.box_py, self.box_dist, color_intr)
+                base_pt = transform_camera_to_base(cam_pt)
+                place_y = base_pt[1]   # 取 y 轴偏移
+
+                # 2) 机械臂直接用固定的 x/z，加上这个 y
+                PLACE_X = 0.30         # 预设放置距离（m）
+                PLACE_Z = 0.20         # 预设放置高度（m）
+                self.get_logger().info(f"Placing at y={place_y:.3f}")
+                self.bot.arm.set_ee_pose_components(
+                    x=PLACE_X, y=place_y, z=PLACE_Z, moving_time=1.5
+                )
+
+                # 3) 松开夹爪，切换状态
                 self.bot.gripper.release()
                 self.call_set_state("EXPLORE")
                 response.success = True
             else:
-                self.get_logger().info(f"Box color ({self.detected_box_color}) DOES NOT match object color ({self.object_color}). Holding object.")
+                self.get_logger().info(
+                    f"Detected box ({self.detected_box_color}) != object ({self.object_color}), retrying..."
+                )
                 response.success = False
+
+        # elif self.current_state == "RELEASE":
+        #     # 释放前先检查箱子颜色是否与物块颜色匹配
+        #     if self.object_color is None:
+        #         self.get_logger().warn("Object color not locked. Cannot verify box color. Holding object.")
+        #         response.success = False
+        #     elif self.detected_box_color is None:
+        #         self.get_logger().warn("No box color detected. Holding object.")
+        #         response.success = False
+        #     elif self.detected_box_color.lower() == self.object_color.lower():
+        #         self.get_logger().info("Box color matches object color. Executing release.")
+        #         self.bot.gripper.release()
+        #         #TODO add release action
+
+
+
+        #         self.call_set_state("EXPLORE")
+        #         response.success = True
+        #     else:
+        #         self.get_logger().info(f"Box color ({self.detected_box_color}) DOES NOT match object color ({self.object_color}). Holding object.")
+        #         response.success = False
 
         elif self.current_state == "explore":
             self.get_logger().info("Current state is explore. No grasp action executed.")

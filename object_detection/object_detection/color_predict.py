@@ -198,6 +198,7 @@ class ColorPredictNode(Node):
         msg.z = dist_m   # 距离(米)
         msg.angle = 0.0  # 角度
         msg.detected = detected
+        msg.color = color_name or ""  
 
         self.get_logger().info(f"Publish locked_color={self.locked_color}: px={msg.x:.1f},py={msg.y:.1f}, z={msg.z:.2f}, det={msg.detected}")
         self.target_pub.publish(msg)
