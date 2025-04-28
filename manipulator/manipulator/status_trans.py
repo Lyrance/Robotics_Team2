@@ -118,6 +118,36 @@ class ServerOfPerceptionAndGrasp(Node):
             f"dist={self.latest_box_dist:.2f}m, color={self.latest_box_color}, det={self.latest_box_detected}"
         )
 
+        # --- RELEASE ---
+        if self.current_state == "release":
+            # 1) 等待锁定颜色 & 箱子检测
+            if self.object_color is None or not self.latest_box_detected:
+                self.get_logger().warn("Waiting for object_color or box detection...")
+
+            # 2) 颜色匹配时放置
+            if self.latest_box_color.lower() == self.object_color.lower():
+                cam_pt  = transform_pixel_to_camera(
+                    self.latest_box_px,
+                    self.latest_box_py,
+                    self.latest_box_dist,
+                    color_intr
+                )
+                base_pt = transform_camera_to_base(cam_pt)
+                place_y = base_pt[1]
+
+                PLACE_X, PLACE_Z = 0.30, 0.20
+                self.get_logger().info(f"Placing at x={PLACE_X:.2f}, y={place_y:.3f}, z={PLACE_Z:.2f}")
+                self.bot.arm.set_ee_pose_components(
+                    x=PLACE_X, y=place_y, z=PLACE_Z, moving_time=1.5
+                )
+                self.bot.gripper.release()
+                self.get_logger().info("Release done. Switching to explore.")
+                self.current_state = "explore"
+            else:
+                self.get_logger().info(
+                    f"Box color ({self.latest_box_color}) != object ({self.object_color}). Retrying..."
+                )
+
     def callback(self, request, response):
         """
         核心状态机：
@@ -158,39 +188,7 @@ class ServerOfPerceptionAndGrasp(Node):
             else:
                 response.success = False
 
-        # --- RELEASE ---
-        elif self.current_state == "release":
-            # 1) 等待锁定颜色 & 箱子检测
-            if self.object_color is None or not self.latest_box_detected:
-                self.get_logger().warn("Waiting for object_color or box detection...")
-                response.success = False
-                return response
-
-            # 2) 颜色匹配时放置
-            if self.latest_box_color.lower() == self.object_color.lower():
-                cam_pt  = transform_pixel_to_camera(
-                    self.latest_box_px,
-                    self.latest_box_py,
-                    self.latest_box_dist,
-                    color_intr
-                )
-                base_pt = transform_camera_to_base(cam_pt)
-                place_y = base_pt[1]
-
-                PLACE_X, PLACE_Z = 0.30, 0.20
-                self.get_logger().info(f"Placing at x={PLACE_X:.2f}, y={place_y:.3f}, z={PLACE_Z:.2f}")
-                self.bot.arm.set_ee_pose_components(
-                    x=PLACE_X, y=place_y, z=PLACE_Z, moving_time=1.5
-                )
-                self.bot.gripper.release()
-                self.get_logger().info("Release done. Switching to explore.")
-                self.current_state = "explore"
-                response.success = True
-            else:
-                self.get_logger().info(
-                    f"Box color ({self.latest_box_color}) != object ({self.object_color}). Retrying..."
-                )
-                response.success = False
+        
 
         # --- EXPLORE ---
         elif self.current_state == "explore":

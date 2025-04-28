@@ -154,6 +154,35 @@ class DemoManipulatorWithColorCheck(Node):
         else:
             self.get_logger().warn("接收到的 ObjectInformation 中无 color 字段")
 
+        if self.current_state == "RELEASE":
+            # 如果还没锁定物块颜色，或者还没收到箱子信息，都先不放
+            if self.object_color is None or not self.box_detected:
+                self.get_logger().info("Waiting for locked object color or box detection...")
+
+            # 只在检测到匹配颜色的箱子时放置
+            if self.detected_box_color.lower() == self.object_color.lower():
+                # 1) 像素→相机坐标→基坐标
+                cam_pt  = transform_pixel_to_camera(self.box_px, self.box_py, self.box_dist, color_intr)
+                base_pt = transform_camera_to_base(cam_pt)
+                place_y = base_pt[1]   # 取 y 轴偏移
+
+                # 2) 机械臂直接用固定的 x/z，加上这个 y
+                PLACE_X = 0.30         # 预设放置距离（m）
+                PLACE_Z = 0.20         # 预设放置高度（m）
+                self.get_logger().info(f"Placing at y={place_y:.3f}")
+                self.bot.arm.set_ee_pose_components(
+                    x=PLACE_X, y=place_y, z=PLACE_Z, moving_time=1.5
+                )
+
+                # 3) 松开夹爪，切换状态
+                self.bot.gripper.release()
+                self.call_set_state("EXPLORE")
+            else:
+                self.get_logger().info(
+                    f"Detected box ({self.detected_box_color}) != object ({self.object_color}), retrying..."
+                )
+                
+
     def callback(self, request, response):
         """
         根据当前状态执行操作：
@@ -211,36 +240,7 @@ class DemoManipulatorWithColorCheck(Node):
                 self.get_logger().info("Failed to reach return pose. Retrying...")
                 response.success = False
         elif self.current_state == "RELEASE":
-            # 如果还没锁定物块颜色，或者还没收到箱子信息，都先不放
-            if self.object_color is None or not self.box_detected:
-                self.get_logger().info("Waiting for locked object color or box detection...")
-                response.success = False
-                return response
-
-            # 只在检测到匹配颜色的箱子时放置
-            if self.detected_box_color.lower() == self.object_color.lower():
-                # 1) 像素→相机坐标→基坐标
-                cam_pt  = transform_pixel_to_camera(self.box_px, self.box_py, self.box_dist, color_intr)
-                base_pt = transform_camera_to_base(cam_pt)
-                place_y = base_pt[1]   # 取 y 轴偏移
-
-                # 2) 机械臂直接用固定的 x/z，加上这个 y
-                PLACE_X = 0.30         # 预设放置距离（m）
-                PLACE_Z = 0.20         # 预设放置高度（m）
-                self.get_logger().info(f"Placing at y={place_y:.3f}")
-                self.bot.arm.set_ee_pose_components(
-                    x=PLACE_X, y=place_y, z=PLACE_Z, moving_time=1.5
-                )
-
-                # 3) 松开夹爪，切换状态
-                self.bot.gripper.release()
-                self.call_set_state("EXPLORE")
-                response.success = True
-            else:
-                self.get_logger().info(
-                    f"Detected box ({self.detected_box_color}) != object ({self.object_color}), retrying..."
-                )
-                response.success = False
+            self.target_color_callback()
 
         # elif self.current_state == "RELEASE":
         #     # 释放前先检查箱子颜色是否与物块颜色匹配
