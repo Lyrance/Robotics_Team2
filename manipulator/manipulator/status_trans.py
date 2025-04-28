@@ -16,6 +16,9 @@ from interbotix_xs_modules.xs_robot.arm import InterbotixManipulatorXS
 
 import numpy as np
 from math import acos, atan2
+from math import pi, atan2, acos
+# 而不要再导入 cos, sin（如果不需要的话）
+
 import cv2
 
 # 相机内参

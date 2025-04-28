@@ -3,3 +3,5 @@ float32 y
 float32 z
 float32 angle
 bool detected
+
+string  color
